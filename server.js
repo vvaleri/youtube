@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+const items = require('./routes/items');
+
 const app = express();
 
 app.use(express.json());
@@ -11,6 +13,8 @@ mongoose
   .connect(database)
   .then(() => console.log('connect...'))
   .catch(err => console.log(err));
+
+app.use('/items', items);
 
 const port = process.env.PORT || 5000;
 
