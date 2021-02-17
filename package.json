@@ -4,17 +4,20 @@
   "description": "youtube search",
   "main": "server.js",
   "scripts": {
+    "client-install": "npm install --prefix client",
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Valeria Rodionova",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^5.3.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.16"
   },
   "devDependencies": {
+    "concurrently": "^5.3.0",
     "eslint": "^7.20.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
