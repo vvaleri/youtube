@@ -2,6 +2,10 @@ import styled from 'styled-components/macro';
 
 const Container = styled.div`
   display: flex;
+  margin: 0 auto;
+  padding: 15px 20px;
+  max-width: 1080px;
+
 `
 
 const Logo = styled.div`
@@ -10,6 +14,9 @@ const Logo = styled.div`
 
 const Nav = styled.nav`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 0 auto;
 `
 
 const Menu = styled.ul`

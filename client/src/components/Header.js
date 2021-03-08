@@ -21,6 +21,11 @@ export function Header() {
               )
             }
           </Menu>
+          <Menu>
+            <Item key={ 'Выйти' }>
+              <NavLink exact to={ '/auth' }>Выйти</NavLink>
+            </Item>
+          </Menu>
         </Nav>
       </Container>
     )
