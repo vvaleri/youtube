@@ -1,11 +1,12 @@
 import styled from 'styled-components/macro';
 
 const Container = styled.div`
+  position: fixed;
+  width: 100%;
   display: flex;
   margin: 0 auto;
   padding: 15px 20px;
-  max-width: 1080px;
-
+  background-color: #fff;
 `
 
 const Logo = styled.div`

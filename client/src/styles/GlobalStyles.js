@@ -8,6 +8,10 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
   }
 
+  h1, h2, h3 {
+    font-weight: 400;
+  }
+
   a {
     text-decoration: none;
   }

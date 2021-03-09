@@ -1,14 +1,13 @@
-import { Header } from './components';
+import { Header, Search } from './components';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
     <BrowserRouter>
+      <Header/>
       <Switch>
-        <Header>
-          <Route path='/'/>
-          <Route/>
-        </Header>
+        <Route path='/' exact component={ Search }/>
+        <Route/>
       </Switch>
     </BrowserRouter>
     
