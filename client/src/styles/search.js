@@ -29,6 +29,8 @@ const SearchInner = styled.div`
 const SearchInput = styled.input`
   width: 536px;
   height: 52px;
+  padding: 0 0 0 15px;
+  font-size: 20px;
   border: 1px solid #D1D1D1;
   border-radius: 5px 0 0 5px;
 
@@ -37,6 +39,12 @@ const SearchInput = styled.input`
     line-height: 24px;
     color: #272727;
     opacity: 0.3;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid #1390E5;
+    background-color: rgba(197, 228, 249, 0.3);
   }
 `
 

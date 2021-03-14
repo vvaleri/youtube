@@ -1,12 +1,16 @@
 import styled from 'styled-components/macro';
 
-const Container = styled.div`
+const HeaderContainer = styled.header`
   position: fixed;
   width: 100%;
-  display: flex;
-  margin: 0 auto;
-  padding: 15px 20px;
   background-color: #fff;
+`
+
+const Inner = styled.div`
+  display: flex;
+  max-width: 1020px;
+  padding: 10px;
+  margin: 0 auto;
 `
 
 const Logo = styled.div`
@@ -32,10 +36,16 @@ const Item = styled.li`
   }
 
   a {
+    padding: 0 0 25px 0;
     font-size: 18px;
     line-height: 28px;
     color: #1390E5;
+
+    &.active {
+      border-bottom: 1px solid #1390E5;
+    }
   }
+
 `
 
-export { Container, Nav, Menu, Item, Logo }
+export { HeaderContainer, Inner, Nav, Menu, Item, Logo }
