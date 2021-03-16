@@ -10,7 +10,6 @@ function App() {
         <Route/>
       </Switch>
     </BrowserRouter>
-    
   );
 }
 

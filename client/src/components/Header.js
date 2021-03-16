@@ -8,27 +8,27 @@ export function Header() {
     { to: '/favourites', name: 'Избранное' }
   ]
 
-    return (
-      <HeaderContainer>
-        <Inner>
-          <Logo><img src="img/logo.svg" alt="логотип"/></Logo>
-          <Nav>
-            <Menu>
-              {
-                menuItems.map(item => 
-                  <Item key={ item.name }>
-                    <NavLink exact to={ item.to }>{item.name}</NavLink>
-                  </Item>
-                )
-              }
-            </Menu>
-            <Menu>
-              <Item key={ 'Выйти' }>
-                <NavLink exact to={ '/auth' }>Выйти</NavLink>
-              </Item>
-            </Menu>
-          </Nav>
-        </Inner>
-      </HeaderContainer>
-    )
+  return (
+    <HeaderContainer>
+      <Inner>
+        <Logo><img src="img/logo.svg" alt="логотип"/></Logo>
+        <Nav>
+          <Menu>
+            {
+              menuItems.map(item => 
+                <Item key={ item.name }>
+                  <NavLink exact to={ item.to }>{item.name}</NavLink>
+                </Item>
+              )
+            }
+          </Menu>
+          <Menu>
+            <Item key={ 'Выйти' }>
+              <NavLink exact to={ '/auth' }>Выйти</NavLink>
+            </Item>
+          </Menu>
+        </Nav>
+      </Inner>
+    </HeaderContainer>
+  )
 }
