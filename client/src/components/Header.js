@@ -3,10 +3,10 @@ import { HeaderContainer, Inner, Logo, Nav, Menu, Item } from '../styles/header'
 
 export function Header() {
 
-    const menuItems = [
-      { to: '/', name: 'Поиск' },
-      { to: '/favourites', name: 'Избранное' }
-    ]
+  const menuItems = [
+    { to: '/', name: 'Поиск' },
+    { to: '/favourites', name: 'Избранное' }
+  ]
 
     return (
       <HeaderContainer>

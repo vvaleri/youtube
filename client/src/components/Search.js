@@ -1,3 +1,4 @@
+import { Results } from '../components';
 import { Main, SearchContainer, SearchTitle, SearchInner, SearchInput, SearchBtn } from '../styles/search';
 
 export function Search() {
@@ -6,10 +7,11 @@ export function Search() {
         <SearchContainer>
           <SearchTitle>Поиск видео</SearchTitle>
           <SearchInner>
-            <SearchInput placeholder='Что хотите посмотреть?' />
+            <SearchInput placeholder='Что хотите посмотреть?'/>
             <SearchBtn>Найти</SearchBtn>
           </SearchInner>
         </SearchContainer>
+        <Results/>
       </Main>
       
     )
