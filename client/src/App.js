@@ -1,4 +1,4 @@
-import { Header, Search } from './components';
+import { Header, Intro } from './components';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
     <BrowserRouter>
       <Header/>
       <Switch>
-        <Route path='/' exact component={ Search }/>
+        <Route path='/' exact component={ Intro }/>
         <Route/>
       </Switch>
     </BrowserRouter>

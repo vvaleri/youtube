@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Results } from '../components';
-import { Main, SearchContainer, SearchTitle, SearchInner, SearchInput, SearchBtn } from '../styles/search';
+import { Results } from '.';
+import { Main, IntroContainer, IntroTitle, IntroInner, IntroInput, IntroBtn } from '../styles/intro';
 import apiKey  from '../config/key';
 
-export function Search() {
+export function Intro() {
 
   const [ video, setVideo ] = useState([]);
   const [ inputValue, setInputValue ] = useState('');
@@ -16,18 +16,18 @@ export function Search() {
 
   return (
     <Main>
-      <SearchContainer>
-        <SearchTitle>Поиск видео</SearchTitle>
-        <SearchInner>
-          <SearchInput 
+      <IntroContainer>
+        <IntroTitle>Поиск видео</IntroTitle>
+        <IntroInner>
+          <IntroInput 
             type='text'
             placeholder='Что хотите посмотреть?'
             value={ inputValue }
             onChange={ (e) => setInputValue(e.target.value) }
-          />
-          <SearchBtn onClick={ getVideo }>Найти</SearchBtn>
-        </SearchInner>
-      </SearchContainer>
+          /> 
+          <IntroBtn onClick={ getVideo }>Найти</IntroBtn>
+        </IntroInner>
+      </IntroContainer>
       <Results/>
     </Main>  
   )

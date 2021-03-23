@@ -15,7 +15,7 @@ const Main = styled.main`
   }
 `
 
-const SearchContainer = styled.div`
+const IntroContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +29,7 @@ const SearchContainer = styled.div`
   }
 `
 
-const SearchTitle = styled.h1`
+const IntroTitle = styled.h1`
   margin: 0 0 40px 0;
   font-size: 36px;
   line-height: 52px;
@@ -41,11 +41,11 @@ const SearchTitle = styled.h1`
   }
 `
 
-const SearchInner = styled.div`
+const IntroInner = styled.div`
   display: flex;
 `
 
-const SearchInput = styled.input`
+const IntroInput = styled.input`
   width: 536px;
   height: 52px;
   padding: 0 0 0 15px;
@@ -71,7 +71,7 @@ const SearchInput = styled.input`
   }
 `
 
-const SearchBtn = styled.button`
+const IntroBtn = styled.button`
   padding: 14px 35px;
   display: flex;
   justify-content: center;
@@ -87,4 +87,4 @@ const SearchBtn = styled.button`
   }
 `
 
-export { Main, SearchContainer, SearchTitle, SearchInner, SearchInput, SearchBtn }
+export { Main, IntroContainer, IntroTitle, IntroInner, IntroInput, IntroBtn }
