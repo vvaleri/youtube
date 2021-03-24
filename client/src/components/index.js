@@ -1,5 +1,9 @@
 import { Header } from './Header';
-import { Intro } from './Intro';
+import { Search } from './Search';
 import { Results } from './Results';
 
-export { Header, Intro, Results }
+export { 
+    Header,
+    Search,
+    Results
+}
