@@ -5,19 +5,18 @@ const Main = styled.main`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 120px 0 0 0;
-  height: 100vh;
-  background-color: #FAFAFA;
+  padding: 120px 20px 0;
+  margin: 0 auto;
+  min-height: 100vh;
+  max-width: 1060px;
 `
 
 const SearchContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 0 auto;
-  padding: 0 20px;
-  max-width: 1060px;
   width: 100%;
+  margin: 0 0 40px 0;
 `
 
 const SearchTitle = styled.h1`

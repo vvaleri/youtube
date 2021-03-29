@@ -16,6 +16,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: Roboto, sans-serif;
+    background-color: #FAFAFA;
   }
 
   h1, h2, h3 {
