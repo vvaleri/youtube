@@ -13,5 +13,5 @@ export default function useFetch() {
     setMainSearch(true);
   }
 
-  return { mainSearch, inputValue, setInputValue, getVideo }
+  return { mainSearch, setMainSearch, inputValue, setInputValue, getVideo }
 }

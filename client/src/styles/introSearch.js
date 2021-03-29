@@ -3,36 +3,32 @@ import styled from 'styled-components/macro';
 const Main = styled.main`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 120px 0 0 0;
+  justify-content: center;
+  align-items: center; 
   height: 100vh;
   background-color: #FAFAFA;
 `
 
-const SearchContainer = styled.div`
+const IntroContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin: 0 auto;
+  align-items: center;
   padding: 0 20px;
   max-width: 1060px;
-  width: 100%;
 `
 
-const SearchTitle = styled.h1`
-  margin: 0 0 10px 0;
-  font-size: 28px;
-  line-height:40px;
+const IntroTitle = styled.h1`
+  margin: 0 0 40px 0;
+  font-size: 36px;
+  line-height: 52px;
 `
 
-const SearchInner = styled.div`
+const IntroInner = styled.div`
   display: flex;
-  position: relative;
 `
 
-const SearchInput = styled.input`
-  width: 870px;
+const IntroInput = styled.input`
+  width: 536px;
   height: 52px;
   padding: 0 0 0 15px;
   font-size: 20px;
@@ -53,18 +49,10 @@ const SearchInput = styled.input`
   }
 `
 
-const LikeBtn = styled.button`
-  position: absolute;
-  top: 15px;
-  right: 165px;
-  border: none;
-  background: none;
-`
-
-const SearchBtn = styled.button`
+const IntroBtn = styled.button`
   display: flex;
   justify-content: center;
-  padding: 14px 50px;
+  padding: 14px 35px;
   max-width: 150px;
   color: #fff;
   font-size: 20px;
@@ -73,4 +61,4 @@ const SearchBtn = styled.button`
   border-radius: 0 5px 5px 0;
 `
 
-export { Main, SearchContainer, SearchTitle, SearchInner, SearchInput, LikeBtn, SearchBtn }
+export { Main, IntroContainer, IntroTitle, IntroInner, IntroInput, IntroBtn }
