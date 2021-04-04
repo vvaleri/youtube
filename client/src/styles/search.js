@@ -75,11 +75,16 @@ const SearchInput = styled.input`
 `
 
 const LikeBtn = styled.button`
+  display: none;
   position: absolute;
   top: 15px;
   right: 165px;
   border: none;
   background: none;
+
+  &.active {
+    display: block;
+  }
 `
 
 const SearchBtn = styled.button`
