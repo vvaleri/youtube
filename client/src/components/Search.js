@@ -1,6 +1,6 @@
 import { Results } from '../components';
 import { Main, SearchContainer, SearchTitle, SearchInner, SearchInput, LikeBtn, SearchBtn } from '../styles/search';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function Search() {
 
@@ -8,12 +8,19 @@ export function Search() {
   const [ inputValue, setInputValue ] = useState('');
   const [ classActive, setClassActive ] = useState('');
 
-  const getVideo = async () => {
-    const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${ inputValue }&key=${ apiKey }`);
-    const result = await response.json();
-    setVideo(result)
-    setClassActive('active')
+  const getVideo = () => {
+    // const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${ inputValue }&key=${ apiKey }`);
+    // const result = await response.json();
+    // setVideo(result)
+    setClassActive('active');
+    localStorage.setItem('classActive', 'true');
   }
+
+  useEffect(() => {
+    if (localStorage.getItem('classActive')) {
+      setClassActive('active');
+    } 
+  }, [])
 
   return (
     <Main className={ classActive }>
