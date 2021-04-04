@@ -3,26 +3,44 @@ import styled from 'styled-components/macro';
 const Main = styled.main`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 120px 20px 0;
-  margin: 0 auto;
+  justify-content: center;
+  align-items: center; 
+  padding: 0 20px 0;
   min-height: 100vh;
-  max-width: 1060px;
+  background-color: #FAFAFA;
+
+  &.active {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 120px 20px 0;
+  }
 `
 
 const SearchContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  margin: 0 0 40px 0;
+  align-items: center;
+  padding: 0 20px;
+  max-width: 1060px;
+
+  &.active {
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 100%
+  }
 `
 
 const SearchTitle = styled.h1`
-  margin: 0 0 10px 0;
-  font-size: 28px;
-  line-height:40px;
+  margin: 0 0 40px 0;
+  font-size: 36px;
+  line-height: 52px;
+
+  &.active {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    line-height:40px;
+  }
 `
 
 const SearchInner = styled.div`
@@ -31,7 +49,7 @@ const SearchInner = styled.div`
 `
 
 const SearchInput = styled.input`
-  width: 870px;
+  width: 536px;
   height: 52px;
   padding: 0 0 0 15px;
   font-size: 20px;
@@ -50,6 +68,10 @@ const SearchInput = styled.input`
     border: 1px solid #1390E5;
     background-color: rgba(197, 228, 249, 0.3);
   }
+
+  &.active {
+    width: 870px;
+  }
 `
 
 const LikeBtn = styled.button`
@@ -63,13 +85,17 @@ const LikeBtn = styled.button`
 const SearchBtn = styled.button`
   display: flex;
   justify-content: center;
-  padding: 14px 50px;
+  padding: 14px 35px;
   max-width: 150px;
   color: #fff;
   font-size: 20px;
   background-color: #1390E5;
   border: 1px solid #1390E5;
   border-radius: 0 5px 5px 0;
+
+  &.active {
+    padding: 14px 50px;
+  }
 `
 
 export { Main, SearchContainer, SearchTitle, SearchInner, SearchInput, LikeBtn, SearchBtn }
