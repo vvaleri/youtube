@@ -1,6 +1,7 @@
-import { ResultsContainer, ResultsHeader, ResultsText, ResultsTitle, ResultsNumber, ResultsButtons, ResultsBtn } from '../styles/results'
+import { ResultsContainer, ResultsHeader, ResultsText, ResultsTitle, ResultsNumber, ResultsButtons, ResultsBtn, ResultsContent } from '../styles/results'
+import { VideoItem } from '../components';
 
-export function Results() {
+export function Results({ video }) {
   return(
     <ResultsContainer>
       <ResultsHeader>
@@ -13,6 +14,9 @@ export function Results() {
           <ResultsBtn><img src="img/grid.svg" alt="показать таблицей"/></ResultsBtn>
         </ResultsButtons>
       </ResultsHeader>
+      <ResultsContent>
+        <VideoItem/>
+      </ResultsContent>
     </ResultsContainer>
   )
 }

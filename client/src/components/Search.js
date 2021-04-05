@@ -41,7 +41,7 @@ export function Search() {
           <SearchBtn className={ classActive } onClick={ getVideo }>Найти</SearchBtn>
         </SearchInner>
         {
-          result && <Results/>
+          result && <Results video={ video }/>
         }
       </SearchContainer>
     </Main>  

@@ -21,7 +21,7 @@ const SearchContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 0 20px;
-  max-width: 1060px;
+  max-width: 1080px;
 
   &.active {
     align-items: flex-start;
@@ -70,7 +70,7 @@ const SearchInput = styled.input`
   }
 
   &.active {
-    width: 870px;
+    width: 890px;
   }
 `
 

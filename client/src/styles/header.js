@@ -8,7 +8,7 @@ const HeaderContainer = styled.header`
 
 const Inner = styled.div`
   display: flex;
-  max-width: 1020px;
+  max-width: 1040px;
   padding: 10px;
   margin: 0 auto;
 `

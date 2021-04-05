@@ -4,11 +4,13 @@ const ResultsContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin: 40px 0 0 0;
 `
 
 const ResultsHeader = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 `
 
 const ResultsText = styled.div`
@@ -27,7 +29,7 @@ const ResultsNumber = styled.div`
 `
 
 const ResultsButtons = styled.div`
-
+  
 `
 
 const ResultsBtn = styled.button`
@@ -36,4 +38,11 @@ const ResultsBtn = styled.button`
   background: none;
 `
 
-export { ResultsContainer, ResultsHeader, ResultsTitle, ResultsText, ResultsNumber, ResultsButtons, ResultsBtn }
+const ResultsContent = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 20px);
+  margin-bottom: --20px;
+`
+
+export { ResultsContainer, ResultsHeader, ResultsTitle, ResultsText, ResultsNumber, ResultsButtons, ResultsBtn, ResultsContent }
