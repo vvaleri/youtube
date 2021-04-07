@@ -1,12 +1,12 @@
 import { ItemContainer, ItemImg, ItemContent, ItemTitle, ItemText, ItemViews } from '../styles/videoItem';
 
-export function VideoItem() {
+export function VideoItem( { item }) {
   return(
     <ItemContainer>
-      <ItemImg></ItemImg>
+      <ItemImg><img src={ item.snippet.thumbnails.medium.url }/></ItemImg>
       <ItemContent>
-        <ItemTitle>Как кормить кошку натуралкой | Перечень полезных для кош...</ItemTitle>
-        <ItemText>Ветеринария и Кормление соб.</ItemText>
+        <ItemTitle>{ item.snippet.title }</ItemTitle>
+        <ItemText>{ item.snippet.description}</ItemText>
         <ItemViews>786 тыс. просмотров</ItemViews>
       </ItemContent>
     </ItemContainer>

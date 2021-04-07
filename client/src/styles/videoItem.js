@@ -12,6 +12,11 @@ const ItemImg = styled.div`
   height: 138px;
   border: 1px solid #1390E5;
   margin-bottom: 8px;
+
+  img {
+    width: 245px;
+    height: 138px;
+  }
 `
 
 const ItemContent = styled.div`

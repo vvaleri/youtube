@@ -1,12 +1,12 @@
 import { ResultsContainer, ResultsHeader, ResultsText, ResultsTitle, ResultsNumber, ResultsButtons, ResultsBtn, ResultsContent } from '../styles/results'
 import { VideoItem } from '../components';
 
-export function Results({ video }) {
+export function Results({ video, inputValue }) {
   return(
     <ResultsContainer>
       <ResultsHeader>
         <ResultsText>
-          <ResultsTitle>Видео по запросу ""</ResultsTitle>
+          <ResultsTitle>Видео по запросу "{ inputValue }"</ResultsTitle>
           <ResultsNumber>85</ResultsNumber>
         </ResultsText>
         <ResultsButtons>
@@ -15,7 +15,9 @@ export function Results({ video }) {
         </ResultsButtons>
       </ResultsHeader>
       <ResultsContent>
-        <VideoItem/>
+        {
+          video.map(item => <VideoItem key={ item.id.videoId } item={ item }/>)
+        }
       </ResultsContent>
     </ResultsContainer>
   )

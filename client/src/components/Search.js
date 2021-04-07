@@ -1,18 +1,19 @@
+import { useEffect, useState } from 'react';
 import { Results } from '../components';
 import { Main, SearchContainer, SearchTitle, SearchInner, SearchInput, LikeBtn, SearchBtn } from '../styles/search';
-import { useEffect, useState } from 'react';
+import apiKey from '../config/key';
 
 export function Search() {
 
   const [ video, setVideo ] = useState([]);
   const [ inputValue, setInputValue ] = useState('');
   const [ classActive, setClassActive ] = useState('');
-  const [ result, setResult ] = useState(false);
+  const [ results, setResult ] = useState(false);
 
-  const getVideo = () => {
-    // const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${ inputValue }&key=${ apiKey }`);
-    // const result = await response.json();
-    // setVideo(result)
+  const getVideo = async () => {
+    const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${ inputValue }&key=${ apiKey }`);
+    const result = await response.json();
+    setVideo(result.items)
     setClassActive('active');
     setResult(true);
     localStorage.setItem('classResult', 'true');
@@ -41,7 +42,7 @@ export function Search() {
           <SearchBtn className={ classActive } onClick={ getVideo }>Найти</SearchBtn>
         </SearchInner>
         {
-          result && <Results video={ video }/>
+          results && <Results video={ video } inputValue={ inputValue }/>
         }
       </SearchContainer>
     </Main>  
