@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Results } from '../components';
+import { Results, FavouriteModal } from '../components';
 import { Main, SearchContainer, SearchTitle, SearchInner, SearchInput, LikeBtn, SearchBtn } from '../styles/search';
 import apiKey from '../config/key';
 
@@ -46,5 +46,6 @@ export function Search() {
         }
       </SearchContainer>
     </Main>  
+   
   )
 }
