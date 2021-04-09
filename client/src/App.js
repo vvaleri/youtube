@@ -1,4 +1,4 @@
-import { Header, Search } from './components';
+import { Header, Search, Favourites } from './components';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
       <Header/>
       <Switch>
         <Route path='/' exact component={ Search }/>
-        <Route/>
+        <Route path='/favourites' exact component={ Favourites }/>
       </Switch>
     </BrowserRouter>
   );
