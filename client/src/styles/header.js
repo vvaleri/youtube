@@ -39,10 +39,13 @@ const Item = styled.li`
     padding: 0 0 25px 0;
     font-size: 18px;
     line-height: 28px;
-    color: #1390E5;
+    color: #272727;
+    opacity: 0.3;
 
     &.active {
+      color: #1390E5;
       border-bottom: 1px solid #1390E5;
+      opacity: 1;
     }
   }
 
