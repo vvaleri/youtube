@@ -1,4 +1,4 @@
-import { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, Input, ModalButtons, SaveBtn } from '../styles/favouriteModal';
+import { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, Input, ModalButtons, CancelBtn, SaveBtn } from '../styles/favouriteModal';
 
 export function FavouriteModal() {
   return(
@@ -10,7 +10,7 @@ export function FavouriteModal() {
           <Input id="req"/>
         </ModalBox>
         <ModalBox>
-          <Label for="name">* Название</Label>
+          <Label for="name"><span>*</span> Название</Label>
           <Input id="name" placeholder="Укажите название"/>
         </ModalBox>
         <ModalBox>
@@ -22,9 +22,9 @@ export function FavouriteModal() {
           <Input id="range" type="range"/>
         </ModalBox>
         <ModalButtons>
+          <CancelBtn>Не сохранять</CancelBtn>
           <SaveBtn>Сохранить</SaveBtn>
         </ModalButtons>
-
       </ModalContainer>
     </ModalMain>
   )

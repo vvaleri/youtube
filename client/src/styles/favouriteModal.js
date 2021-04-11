@@ -38,6 +38,10 @@ const ModalBox = styled.div`
 const Label = styled.label`
   font-size: 16px;
   line-height: 22px;
+
+  span {
+    color: #FF0000;
+  }
 `
 
 const Input = styled.input`
@@ -51,20 +55,40 @@ const Input = styled.input`
     font-size: 20px;
     color: #272727;
     opacity: 0.3;
-  
+  }
+
+  :focus {
+    outline: none;
+    border: 1px solid #1390E5;
+    background-color: rgba(197, 228, 249, 0.3);
   }
 `
 
 const ModalButtons = styled.div`
   display: flex;
+  justify-content: space-between;
 `
 
-const SaveBtn = styled.button`
-  padding: 14px 20px;
+const CancelBtn = styled.button`
+  padding: 14px 40px;
   font-size: 20px;
+  color: #1390E5;
   border: 1px solid #1390E5;
   border-radius: 5px;
   background: none;
+  cursor: pointer;
+  transition: box-shadow 0.4s;
+
+  :hover {
+    box-shadow: 1px 1px 3px 3px rgba(19, 144, 229, 0.8);
+
+  }
 `
 
-export { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, Input, ModalButtons, SaveBtn }
+const SaveBtn = styled(CancelBtn)`
+  padding: 14px 50px;
+  color: #fff;
+  background-color: #1390E5;
+`
+
+export { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, Input, ModalButtons, CancelBtn, SaveBtn }

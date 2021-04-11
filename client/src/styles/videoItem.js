@@ -5,6 +5,7 @@ const ItemContainer = styled.li`
   flex-direction: column;
   width: calc(25% - 20px);
   margin: 0 20px 30px 0;
+  cursor: pointer;
 `
 
 const ItemImg = styled.div`
@@ -20,11 +21,15 @@ const ItemImg = styled.div`
 `
 
 const ItemContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   font-size: 14px;
   line-height: 16px; 
 `
 
 const ItemTitle = styled.h2`
+  flex-grow: 1;
   font-weight: 600;
   font-size: 14px;
   line-height: 16px;
@@ -32,6 +37,7 @@ const ItemTitle = styled.h2`
 `
 
 const ItemText = styled.p`
+  flex-grow: 1;
   color: rgba(23, 23, 25, 0.3);
 ` 
 

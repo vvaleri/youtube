@@ -47,6 +47,11 @@ const Item = styled.li`
       border-bottom: 1px solid #1390E5;
       opacity: 1;
     }
+
+    &.auth {
+      color: #1390E5;
+      opacity: 1;
+    }
   }
 
 `
