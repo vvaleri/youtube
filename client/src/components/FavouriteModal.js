@@ -1,6 +1,6 @@
 import { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, Input, ModalButtons, CancelBtn, SaveBtn } from '../styles/favouriteModal';
 
-export function FavouriteModal() {
+export function FavouriteModal({ setModal }) {
   return(
     <ModalMain>
       <ModalContainer>
@@ -22,7 +22,7 @@ export function FavouriteModal() {
           <Input id="range" type="range"/>
         </ModalBox>
         <ModalButtons>
-          <CancelBtn>Не сохранять</CancelBtn>
+          <CancelBtn onClick={ () => setModal(false) }>Не сохранять</CancelBtn>
           <SaveBtn>Сохранить</SaveBtn>
         </ModalButtons>
       </ModalContainer>

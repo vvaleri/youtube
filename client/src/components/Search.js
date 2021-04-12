@@ -9,6 +9,7 @@ export function Search() {
   const [ inputValue, setInputValue ] = useState('');
   const [ classActive, setClassActive ] = useState('');
   const [ results, setResult ] = useState(false);
+  const [ modal, setModal ] = useState(false);
 
   const getVideo = async () => {
     const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${ inputValue }&key=${ apiKey }`);
@@ -38,13 +39,16 @@ export function Search() {
             value={ inputValue }
             onChange={ (e) => setInputValue(e.target.value) }
           />
-          <LikeBtn className={ classActive }><img src="img/like.svg" alt="кнопка сохранить поиск"/></LikeBtn>
+          <LikeBtn onClick={ () => setModal(true) } className={ classActive }><img src="img/like.svg" alt="кнопка сохранить поиск"/></LikeBtn>
           <SearchBtn className={ classActive } onClick={ getVideo }>Найти</SearchBtn>
         </SearchInner>
         {
           results && <Results video={ video } inputValue={ inputValue }/>
         }
       </SearchContainer>
+      {
+        modal && <FavouriteModal setModal={ setModal }/>
+      }
     </Main>  
    
   )
