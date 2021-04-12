@@ -2,21 +2,33 @@ import styled from 'styled-components/macro';
 
 const ItemContainer = styled.li`
   display: flex;
-  flex-direction: column;
-  width: calc(25% - 20px);
+  flex-direction: column; 
+   width: calc(25% - 20px);
   margin: 0 20px 30px 0;
   cursor: pointer;
+
+  &.list {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+  }
 `
 
 const ItemImg = styled.div`
-  width: 245px;
-  height: 138px;
+  display: flex;
   border: 1px solid #1390E5;
   margin-bottom: 8px;
 
   img {
-    width: 245px;
-    height: 138px;
+    max-width: 245px;
+
+    &.list {
+      max-width: 157px;
+    }
+  }
+
+  &.list {
+    margin-right: 20px;
   }
 `
 

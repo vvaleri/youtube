@@ -36,6 +36,7 @@ const ResultsBtn = styled.button`
   margin: 0 0 0 15px;
   border: none;
   background: none;
+  cursor: pointer;
 `
 
 const ResultsContent = styled.ul`

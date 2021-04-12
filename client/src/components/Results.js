@@ -1,7 +1,11 @@
 import { ResultsContainer, ResultsHeader, ResultsText, ResultsTitle, ResultsNumber, ResultsButtons, ResultsBtn, ResultsContent } from '../styles/results'
 import { VideoItem } from '../components';
+import { useState } from 'react';
 
 export function Results({ video, inputValue }) {
+  
+  const [ classItem, setClassItem ] = useState('');
+
   return(
     <ResultsContainer>
       <ResultsHeader>
@@ -10,13 +14,13 @@ export function Results({ video, inputValue }) {
           <ResultsNumber>85</ResultsNumber>
         </ResultsText>
         <ResultsButtons>
-          <ResultsBtn><img src="img/list.svg" alt="показать в виде списка"/></ResultsBtn>
-          <ResultsBtn><img src="img/grid.svg" alt="показать таблицей"/></ResultsBtn>
+          <ResultsBtn onClick={ () => setClassItem('list') }><img src="img/list.svg" alt="показать в виде списка"/></ResultsBtn>
+          <ResultsBtn onClick={ () => setClassItem('') }><img src="img/grid.svg" alt="показать таблицей"/></ResultsBtn>
         </ResultsButtons>
       </ResultsHeader>
       <ResultsContent>
         {
-          video.map(item => <VideoItem key={ item.id.videoId } item={ item }/>)
+          video.map(item => <VideoItem key={ item.id.videoId } item={ item } classItem={ classItem }/>)
         }
       </ResultsContent>
     </ResultsContainer>

@@ -1,9 +1,9 @@
 import { ItemContainer, ItemImg, ItemContent, ItemTitle, ItemText, ItemViews } from '../styles/videoItem';
 
-export function VideoItem( { item }) {
+export function VideoItem( { item, classItem }) {
   return(
-    <ItemContainer>
-      <ItemImg><img src={ item.snippet.thumbnails.medium.url }/></ItemImg>
+    <ItemContainer className={ classItem }>
+      <ItemImg className={ classItem }><img className={ classItem } src={ item.snippet.thumbnails.medium.url }/></ItemImg>
       <ItemContent>
         <ItemTitle>{ item.snippet.title }</ItemTitle>
         <ItemText>{ item.snippet.description}</ItemText>
