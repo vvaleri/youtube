@@ -4,6 +4,7 @@ import { Results } from './Results';
 import { VideoItem } from './VideoItem';
 import { FavouriteModal } from './FavouriteModal';
 import { Favourites } from './Favourites';
+import { Auth } from './Auth';
 
 export { 
     Header,
@@ -11,5 +12,6 @@ export {
     Results,
     VideoItem,
     FavouriteModal,
-    Favourites
+    Favourites,
+    Auth
 }

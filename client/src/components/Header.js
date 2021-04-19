@@ -4,7 +4,7 @@ import { HeaderContainer, Inner, Logo, Nav, Menu, Item } from '../styles/header'
 export function Header() {
 
   const menuItems = [
-    { to: '/', name: 'Поиск' },
+    { to: '/search', name: 'Поиск' },
     { to: '/favourites', name: 'Избранное' }
   ]
 
@@ -24,7 +24,7 @@ export function Header() {
           </Menu>
           <Menu>
             <Item key={ 'Выйти' }>
-              <NavLink exact to={ '/auth' } className="auth">Выйти</NavLink>
+              <NavLink exact to={ '/' } className="auth">Выйти</NavLink>
             </Item>
           </Menu>
         </Nav>

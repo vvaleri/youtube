@@ -15,7 +15,7 @@ const ItemContainer = styled.li`
 `
 
 const ItemImg = styled.div`
-  display: flex;
+  display: flex; 
   border: 1px solid #1390E5;
   margin-bottom: 8px;
 

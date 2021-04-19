@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Results, FavouriteModal } from '../components';
+import { Results, FavouriteModal, Header } from '../components';
 import { Main, SearchContainer, SearchTitle, SearchInner, SearchInput, LikeBtn, SearchBtn } from '../styles/search';
 import apiKey from '../config/key';
 
@@ -28,28 +28,31 @@ export function Search() {
   }, [])
 
   return (
-    <Main className={ classActive }>
-      <SearchContainer className={ classActive }>
-        <SearchTitle className={ classActive }>Поиск видео</SearchTitle>
-        <SearchInner>
-          <SearchInput 
-            className={ classActive }
-            type='text'
-            placeholder='Что хотите посмотреть?'
-            value={ inputValue }
-            onChange={ (e) => setInputValue(e.target.value) }
-          />
-          <LikeBtn onClick={ () => setModal(true) } className={ classActive }><img src="img/like.svg" alt="кнопка сохранить поиск"/></LikeBtn>
-          <SearchBtn className={ classActive } onClick={ getVideo }>Найти</SearchBtn>
-        </SearchInner>
-        {
+    <>
+      <Header/>
+      <Main className={ classActive }>
+        <SearchContainer className={ classActive }>
+          <SearchTitle className={ classActive }>Поиск видео</SearchTitle>
+          <SearchInner>
+            <SearchInput 
+              className={ classActive }
+              type='text'
+              placeholder='Что хотите посмотреть?'
+              value={ inputValue }
+              onChange={ (e) => setInputValue(e.target.value) }
+            />
+            <LikeBtn onClick={ () => setModal(true) } className={ classActive }><img src="img/like.svg" alt="кнопка сохранить поиск"/></LikeBtn>
+            <SearchBtn className={ classActive } onClick={ getVideo }>Найти</SearchBtn>
+          </SearchInner>
+          {
           results && <Results video={ video } inputValue={ inputValue }/>
-        }
-      </SearchContainer>
-      {
+          }
+        </SearchContainer>
+        {
         modal && <FavouriteModal setModal={ setModal }/>
-      }
-    </Main>  
-   
+        }
+      </Main> 
+
+    </>
   )
 }
