@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const items = require('./routes/items');
 
 const app = express();
 
+app.use(cors())
 app.use(express.json());
 
 const database = require('./config/keys').mongoURI;
@@ -12,7 +14,7 @@ const database = require('./config/keys').mongoURI;
 mongoose
   .connect(database)
   .then(() => console.log('connect...'))
-  .catch(err => console.log(err));
+  // .catch(err => console.log(err));
 
 app.use('/items', items);
 
