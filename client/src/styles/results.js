@@ -24,10 +24,6 @@ const ResultsTitle = styled.div`
   margin: 0 15px 0 0;
 `
 
-const ResultsNumber = styled.div`
-  color: rgba(23, 23, 25, 0.3);
-`
-
 const ResultsButtons = styled.div`
   
 `
@@ -37,6 +33,11 @@ const ResultsBtn = styled.button`
   border: none;
   background: none;
   cursor: pointer;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `
 
 const ResultsContent = styled.ul`
@@ -46,4 +47,4 @@ const ResultsContent = styled.ul`
   margin-bottom: --20px;
 `
 
-export { ResultsContainer, ResultsHeader, ResultsTitle, ResultsText, ResultsNumber, ResultsButtons, ResultsBtn, ResultsContent }
+export { ResultsContainer, ResultsHeader, ResultsTitle, ResultsText, ResultsButtons, ResultsBtn, ResultsContent }

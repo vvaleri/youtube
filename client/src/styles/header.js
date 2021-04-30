@@ -42,6 +42,10 @@ const Item = styled.li`
     color: #272727;
     opacity: 0.3;
 
+    :hover {
+      color: #0057fa;
+    }
+
     &.active {
       color: #1390E5;
       border-bottom: 1px solid #1390E5;

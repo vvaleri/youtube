@@ -1,4 +1,4 @@
-import { ResultsContainer, ResultsHeader, ResultsText, ResultsTitle, ResultsNumber, ResultsButtons, ResultsBtn, ResultsContent } from '../styles/results'
+import { ResultsContainer, ResultsHeader, ResultsText, ResultsTitle, ResultsButtons, ResultsBtn, ResultsContent } from '../styles/results'
 import { VideoItem } from '../components';
 import { useState } from 'react';
 
@@ -11,7 +11,7 @@ export function Results({ video, inputValue }) {
       <ResultsHeader>
         <ResultsText>
           <ResultsTitle>Видео по запросу "{ inputValue }"</ResultsTitle>
-          <ResultsNumber>85</ResultsNumber>
+  
         </ResultsText>
         <ResultsButtons>
           <ResultsBtn onClick={ () => setClassItem('list') }><img src="img/list.svg" alt="показать в виде списка"/></ResultsBtn>

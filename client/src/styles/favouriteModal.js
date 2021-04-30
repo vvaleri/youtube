@@ -77,11 +77,10 @@ const CancelBtn = styled.button`
   border-radius: 5px;
   background: none;
   cursor: pointer;
-  transition: box-shadow 0.4s;
+  transition: background-color 0.3s;
 
   :hover {
-    box-shadow: 1px 1px 3px 3px rgba(19, 144, 229, 0.8);
-
+    background-color: #e3f3ff;
   }
 `
 
@@ -89,6 +88,10 @@ const SaveBtn = styled(CancelBtn)`
   padding: 14px 50px;
   color: #fff;
   background-color: #1390E5;
+
+  :hover {
+    background-color: #0057fa;
+  }
 `
 
 export { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, Input, ModalButtons, CancelBtn, SaveBtn }

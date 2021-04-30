@@ -104,14 +104,14 @@ const SearchBtn = styled.button`
   border: 1px solid #1390E5;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
-  transition: box-shadow 0.4s;
+  transition: background-color 0.3s;
 
   &.active {
     padding: 14px 50px;
   }
 
   :hover {
-    box-shadow: 1px 1px 3px 3px rgba(19, 144, 229, 0.8);
+    background-color: #0057fa;
   }
 `
 

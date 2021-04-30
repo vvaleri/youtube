@@ -8,8 +8,13 @@ export function Favourites() {
   const [ favourites, setFavourites ] = useState([]);
 
   useEffect(() => {
+    let cleanupFunction = true;
+
     axios.get('http://localhost:5000/items')
-    .then(res => setFavourites(res.data))
+    .then(res => {
+      if(cleanupFunction) setFavourites(res.data)
+    })
+    return () => { cleanupFunction = false};
   })
 
   return(
@@ -19,7 +24,7 @@ export function Favourites() {
         <FavouriteTitle>Избранное</FavouriteTitle>
         <FavouriteContainer>
           {
-            favourites.map(item => <FavouriteItem>{item.name}</FavouriteItem>)
+            favourites.map(item => <FavouriteItem key={ item._id }>{item.name}</FavouriteItem>)
           }
         </FavouriteContainer>
       </Main>
