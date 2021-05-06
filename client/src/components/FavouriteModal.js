@@ -30,14 +30,6 @@ export function FavouriteModal({ setModal }) {
           <Label htmlFor="name"><span>*</span> Название</Label>
           <Input value={ name } onChange={ e => setNameValue(e.target.value) } id="name" placeholder="Укажите название"/>
         </ModalBox>
-        <ModalBox>
-          <Label htmlFor="sort">Сортировать по</Label>
-          <Input id="sort" placeholder="Без сортировки"/>
-        </ModalBox>
-        <ModalBox>
-          <Label htmlFor="range">Максимальное количество</Label>
-          <Input id="range" type="range"/>
-        </ModalBox>
         <ModalButtons>
           <CancelBtn onClick={ () => setModal(false) }>Не сохранять</CancelBtn>
           <SaveBtn onClick={ postItem } >Сохранить</SaveBtn>

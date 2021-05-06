@@ -55,6 +55,10 @@ const Item = styled.li`
     &.auth {
       color: #1390E5;
       opacity: 1;
+
+      :hover {
+      color: #0057fa;
+    }
     }
   }
 

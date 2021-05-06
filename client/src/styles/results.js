@@ -8,9 +8,14 @@ const ResultsContainer = styled.div`
 `
 
 const ResultsHeader = styled.div`
-  display: flex;
+  /* display: flex; */
+  display: none;
   justify-content: space-between;
   margin-bottom: 20px;
+
+  &.active {
+    display: flex;
+  }
 `
 
 const ResultsText = styled.div`
@@ -22,6 +27,7 @@ const ResultsText = styled.div`
 
 const ResultsTitle = styled.div`
   margin: 0 15px 0 0;
+  
 `
 
 const ResultsButtons = styled.div`
@@ -44,7 +50,7 @@ const ResultsContent = styled.ul`
   display: flex;
   flex-wrap: wrap;
   width: calc(100% + 20px);
-  margin-bottom: --20px;
+  margin-bottom: -20px;
 `
 
 export { ResultsContainer, ResultsHeader, ResultsTitle, ResultsText, ResultsButtons, ResultsBtn, ResultsContent }

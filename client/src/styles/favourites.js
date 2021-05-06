@@ -18,9 +18,12 @@ const FavouriteContainer = styled.div`
 `
 
 const FavouriteItem = styled.div`
-  padding: 12px 20px 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
   font-weight: 500;
   border-bottom: 1px solid #F1F1F1;
+ 
 `
 
 export { Main, FavouriteTitle, FavouriteContainer, FavouriteItem }

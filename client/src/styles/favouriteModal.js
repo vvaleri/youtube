@@ -36,8 +36,9 @@ const ModalBox = styled.div`
 `
 
 const Label = styled.label`
-  font-size: 16px;
-  line-height: 22px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  line-height: 24px;
 
   span {
     color: #FF0000;
@@ -46,7 +47,7 @@ const Label = styled.label`
 
 const Input = styled.input`
   width: 430px;
-  padding: 12px 15px;
+  padding: 14px 15px;
   background: #FAFAFA;
   border: 1px solid rgba(23, 23, 25, 0.1);
   border-radius: 5px;
@@ -70,7 +71,7 @@ const ModalButtons = styled.div`
 `
 
 const CancelBtn = styled.button`
-  padding: 14px 40px;
+  padding: 12px 40px;
   font-size: 20px;
   color: #1390E5;
   border: 1px solid #1390E5;
@@ -85,7 +86,7 @@ const CancelBtn = styled.button`
 `
 
 const SaveBtn = styled(CancelBtn)`
-  padding: 14px 50px;
+  padding: 12px 50px;
   color: #fff;
   background-color: #1390E5;
 

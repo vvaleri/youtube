@@ -71,11 +71,10 @@ const Enter = styled.button`
   border-radius: 5px;
   background-color: #1390E5;
   cursor: pointer;
-  transition: box-shadow 0.4s;
+  transition: background-color 0.3s;
 
   :hover {
-    box-shadow: 1px 1px 3px 3px rgba(19, 144, 229, 0.8);
-
+    background-color: #0057fa;
   }
 `
 
