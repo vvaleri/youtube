@@ -5,6 +5,7 @@ import { VideoItem } from './VideoItem';
 import { FavouriteModal } from './FavouriteModal';
 import { Favourites } from './Favourites';
 import { Auth } from './Auth';
+import { ChangeModal } from './ChangeModal';
 
 export { 
     Header,
@@ -13,5 +14,6 @@ export {
     VideoItem,
     FavouriteModal,
     Favourites,
-    Auth
+    Auth,
+    ChangeModal
 }

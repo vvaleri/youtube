@@ -13,7 +13,7 @@ export function Search() {
 
   const getVideo = async () => {
     const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${ inputValue }&key=${ apiKey }`);
-    const result = await response.json();
+    const result = await response.json(); 
     setVideo(result.items)
     setClassActive('active');
     setResult(true);
