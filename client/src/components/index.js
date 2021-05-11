@@ -6,6 +6,7 @@ import { FavouriteModal } from './FavouriteModal';
 import { Favourites } from './Favourites';
 import { Auth } from './Auth';
 import { ChangeModal } from './ChangeModal';
+import { FavouriteItem } from './FavouriteItem';
 
 export { 
     Header,
@@ -15,5 +16,6 @@ export {
     FavouriteModal,
     Favourites,
     Auth,
-    ChangeModal
+    ChangeModal,
+    FavouriteItem
 }

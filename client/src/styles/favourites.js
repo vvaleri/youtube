@@ -17,7 +17,7 @@ const FavouriteContainer = styled.div`
   background-color: #fff;
 `
 
-const FavouriteItem = styled.div`
+const Item = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
@@ -26,4 +26,4 @@ const FavouriteItem = styled.div`
  
 `
 
-export { Main, FavouriteTitle, FavouriteContainer, FavouriteItem }
+export { Main, FavouriteTitle, FavouriteContainer, Item }

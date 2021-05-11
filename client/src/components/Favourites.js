@@ -1,12 +1,11 @@
-import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { Header, ChangeModal } from '../components';
-import { Main, FavouriteTitle, FavouriteContainer, FavouriteItem } from '../styles/favourites';
+import { Header, FavouriteItem } from '../components';
+import { Main, FavouriteTitle } from '../styles/favourites';
+import axios from 'axios';
 
 export function Favourites() {
 
   const [ favourites, setFavourites ] = useState([]);
-  const [ modal, setModal ] = useState(false);
 
   useEffect(() => {
     let cleanupFunction = true;
@@ -23,13 +22,8 @@ export function Favourites() {
       <Header/>
       <Main>
         <FavouriteTitle>Избранное</FavouriteTitle>
-        <FavouriteContainer>
-          {
-            favourites.map(item => <FavouriteItem key={ item._id } onClick={ () => setModal(true) }>{item.name}</FavouriteItem>)
-          }
-        </FavouriteContainer>
         {
-        modal && <ChangeModal setModal={ setModal }/>
+          favourites.map(item => <FavouriteItem key={ item._id } item={ item } />)
         }
       </Main>
     </>
