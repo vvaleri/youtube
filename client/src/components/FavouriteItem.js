@@ -10,7 +10,7 @@ export function FavouriteItem({ item }) {
     <FavouriteContainer>
       <Item onClick={ () => setModal(true) }>{item.name}</Item>
       {
-        modal && <ChangeModal key={ item._id } setModal={ setModal }/>
+        modal && <ChangeModal dataTitle={ item.title } dataName={ item.name } id={ item._id } setModal={ setModal }/>
       }
     </FavouriteContainer>
  

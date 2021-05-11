@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, Input, ModalButtons, CancelBtn, SaveBtn } from '../styles/favouriteModal';
 import axios from 'axios';
 
-export function ChangeModal({ setModal }) {
+export function ChangeModal({ id, dataTitle, dataName, setModal }) {
 
-  const [ title, setTitleValue ] = useState('');
-  const [ name, setNameValue ] = useState('');
+  const [ title, setTitleValue ] = useState(dataTitle);
+  const [ name, setNameValue ] = useState(dataName);
   
   const postItem = () => {
     
@@ -14,7 +14,7 @@ export function ChangeModal({ setModal }) {
       name
     }
 
-   axios.put('http://localhost:5000/items/update/:id', valueText)
+   axios.put(`http://localhost:5000/items/update/${ id }`, valueText)
     .then(res => console.log(res.data))
   }
 
