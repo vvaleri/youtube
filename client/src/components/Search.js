@@ -10,6 +10,7 @@ export function Search() {
   const [ classActive, setClassActive ] = useState('');
   const [ results, setResult ] = useState(false);
   const [ modal, setModal ] = useState(false);
+  const [ resultClass, setResultClass ] = useState('');
 
   const getVideo = async () => {
     const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${ inputValue }&key=${ apiKey }`);
@@ -17,6 +18,7 @@ export function Search() {
     setVideo(result.items)
     setClassActive('active');
     setResult(true);
+    setResultClass('active');
     localStorage.setItem('classResult', 'true');
   }
 
@@ -45,7 +47,7 @@ export function Search() {
             <SearchBtn className={ classActive } onClick={ getVideo }>Найти</SearchBtn>
           </SearchInner>
           {
-          results && <Results video={ video } inputValue={ inputValue }/>
+          results && <Results video={ video } inputValue={ inputValue } resultClass={ resultClass }/>
           }
         </SearchContainer>
         {

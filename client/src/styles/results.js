@@ -8,7 +8,6 @@ const ResultsContainer = styled.div`
 `
 
 const ResultsHeader = styled.div`
-  /* display: flex; */
   display: none;
   justify-content: space-between;
   margin-bottom: 20px;
@@ -40,9 +39,26 @@ const ResultsBtn = styled.button`
   background: none;
   cursor: pointer;
   transition: opacity 0.3s;
+  opacity: 0.5;
+
+  &:last-child {
+    opacity: 1;
+  }
 
   &:hover {
-    opacity: 0.7;
+    opacity: 0.9;
+  }
+
+  &.list {
+    opacity: 1;
+
+    &:last-child {
+      opacity: 0.5;
+    }
+
+    &:hover {
+    opacity: 0.9;
+    }
   }
 `
 
