@@ -13,17 +13,49 @@ const FavouriteTitle = styled.h1`
   line-height: 40px;
 `
 
-const FavouriteContainer = styled.div`
+const FavouriteContainer = styled.ul`
   background-color: #fff;
 `
 
-const Item = styled.div`
+const Item = styled.li`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
+  font-size: 18px;
   font-weight: 500;
   border-bottom: 1px solid #F1F1F1;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f0f8ff;
+
+    button {
+      opacity: 1;
+    }
+  }
  
 `
+const Buttons = styled.div`
+  
+`
 
-export { Main, FavouriteTitle, FavouriteContainer, Item }
+const Btn = styled.button`
+  padding: 10px 0;
+  border: none;
+  background-color: transparent;
+  color: #0057fa;
+  cursor: pointer;
+  transition: color 0.3s;
+  opacity: 0;
+
+  &:first-child {
+    margin-right: 15px;
+  }
+
+  &:hover {
+    color: #1390E5;
+  }
+`
+
+export { Main, FavouriteTitle, FavouriteContainer, Item, Buttons, Btn }
