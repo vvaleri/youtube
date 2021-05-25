@@ -9,7 +9,7 @@ const ModalMain = styled.div`
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #75C7FF;
+  background-color: rgba(94, 111, 127, 0.9);;
 
 `
 
@@ -18,7 +18,6 @@ const ModalContainer = styled.div`
   flex-direction: column;
   padding: 36px 40px;
   background-color: #fff;
-  box-shadow: 0px 10px 50px rgba(19, 144, 229, 0.8);
   border-radius: 10px;
 `
 

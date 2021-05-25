@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { ChangeModal } from '../components';
+import { ChangeModal, DeleteModal } from '../components';
 import { FavouriteContainer, Item, Buttons, Btn } from '../styles/favourites';
 
 export function FavouriteItem({ item }) {
 
   const [ modal, setModal ] = useState(false);
+  const [ deleteModal, setDeleteModal ] = useState(false);
 
   return (
     <FavouriteContainer>
@@ -12,11 +13,14 @@ export function FavouriteItem({ item }) {
         {item.name}
         <Buttons>
           <Btn onClick={ () => setModal(true) }>редактировать</Btn>
-          <Btn>удалить</Btn>
+          <Btn onClick={ () => setDeleteModal(true) }>удалить</Btn>
         </Buttons>
       </Item>
       {
         modal && <ChangeModal dataTitle={ item.title } dataName={ item.name } id={ item._id } setModal={ setModal }/>
+      }
+      {
+        deleteModal && <DeleteModal setDeleteModal={ setDeleteModal }/>
       }
     </FavouriteContainer>
  
