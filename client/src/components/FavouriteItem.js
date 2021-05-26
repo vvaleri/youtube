@@ -20,7 +20,7 @@ export function FavouriteItem({ item }) {
         modal && <ChangeModal dataTitle={ item.title } dataName={ item.name } id={ item._id } setModal={ setModal }/>
       }
       {
-        deleteModal && <DeleteModal setDeleteModal={ setDeleteModal }/>
+        deleteModal && <DeleteModal dataTitle={ item.title } dataName={ item.name } id={ item._id } setDeleteModal={ setDeleteModal }/>
       }
     </FavouriteContainer>
  
