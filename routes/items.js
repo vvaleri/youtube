@@ -16,19 +16,16 @@ router.post('/add', (req, res) => {
   });
 
   newItem.save().then(item => res.json(item));
- 
 });
-
 
 router.put('/update/:id', (req, res) => {
   Item.findById(req.params.id)
   .then(item => {
-    item.title = req.body.title,
-    item.name = req.body.name,
-
-    item.save().then(() => res.json('update'))
-  })
-})
+      item.title = req.body.title,
+      item.name = req.body.name,
+      item.save().then(() => res.json('update'))
+    });
+});
 
 
 router.delete('/:id', (req, res) => {
