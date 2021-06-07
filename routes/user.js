@@ -2,7 +2,9 @@ const express = require('express');
 
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator');
+const config = require('../config/keys').secretKey;
 
 const User = require('../models/User');
 
@@ -29,6 +31,27 @@ router.post('/registration',
     const user = new User({ email, password: hashPassword });
     await user.save();
     return res.json({ message: 'User was created' });
+  });
+
+router.post('/login',
+
+  async (req, res) => {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    const isPasswordValid = bcrypt.compareSync(password, user.password);
+    if (!isPasswordValid) {
+      return res.status(400).json({ message: 'Invalid password' });
+    }
+
+    const token = jwt.sign({ id: user.id }, config, { expiresIn: '1h' });
+    return res.json({
+      token,
+      email: user.email
+    });
   });
 
 module.exports = router;
