@@ -1,6 +1,23 @@
+import { useState } from 'react';
 import { Main, Container, Logo, Title, Inputs, Form, Label, Login, Password, Enter } from '../styles/auth';
+import axios from 'axios';
 
 export function Auth() {
+
+  const [ email, setEmail ] = useState('');
+  const [ password, setPassword ] = useState('');
+
+  const initRegistation = () => {
+
+    const userData = {
+      email,
+      password
+    }
+
+    axios.post('http://localhost:5000/auth/registration', userData)
+    .then(res => console.log(res.data))
+  }
+
   return(
     <Main>
       <Container>
@@ -9,13 +26,13 @@ export function Auth() {
 
         <Form>
           <Inputs>
-            <Label>Логин</Label>
-            <Login type="text"/>
+            <Label>E-mail</Label>
+            <Login value={ email } onChange={ e => setEmail(e.target.value) } type="text"/>
 
             <Label>Пароль</Label>
-            <Password type="password"></Password>
+            <Password value={ password } onChange={ e => setPassword(e.target.value) } type="password"></Password>
           </Inputs>
-          <Enter>Войти</Enter>
+          <Enter onClick={ initRegistation }>Зарегистрироваться</Enter>
 
         </Form>
         
