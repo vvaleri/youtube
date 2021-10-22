@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Main, Container, Logo, Title, Inputs, Form, Label, Login, Password } from './authStyles';
+import { Main, Container, Logo, Title, Inputs, Form, Label } from './authStyles';
 import { Button } from '../UI/Button/Button';
+import { Input } from '../UI/Input/Input';
 import axios from 'axios';
 
 export function Auth() {
@@ -28,10 +29,9 @@ export function Auth() {
         <Form>
           <Inputs>
             <Label>E-mail</Label>
-            <Login value={ email } onChange={ e => setEmail(e.target.value) } type="text"/>
-
+            <Input value={ email } onChange={ e => setEmail(e.target.value) } type="text"/>
             <Label>Пароль</Label>
-            <Password value={ password } onChange={ e => setPassword(e.target.value) } type="password"></Password>
+            <Input value={ password } onChange={ e => setPassword(e.target.value) } type="password"></Input>
           </Inputs>
           <Button register onClick={ initRegistation }>Зарегистрироваться</Button>
 

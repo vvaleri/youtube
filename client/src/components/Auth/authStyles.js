@@ -33,6 +33,11 @@ const Title = styled.h1`
 
 const Inputs = styled.div`
   max-width: 334px;
+  margin-bottom: 40px;
+
+  input {
+    margin-bottom: 20px;
+  }
 `
 
 const Form = styled.form`
@@ -44,22 +49,4 @@ const Label = styled.label`
   color: rgba(23, 23, 25, 0.3);
 `
 
-const Login = styled.input`
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 12px 15px;
-  border: 1px solid rgba(23, 23, 25, 0.2);
-  border-radius: 5px;
-
-  :focus {
-    outline: none;
-    border: 1px solid #1390E5;
-    background-color: rgba(197, 228, 249, 0.3);
-  }
-`
-
-const Password = styled(Login)`
-  margin-bottom: 40px;
-`
-
-export { Main, Container, Logo, Title, Inputs, Label, Form, Login, Password }
+export { Main, Container, Logo, Title, Inputs, Label, Form }

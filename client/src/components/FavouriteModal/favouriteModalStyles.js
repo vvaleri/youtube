@@ -15,6 +15,7 @@ const ModalMain = styled.div`
 
 const ModalContainer = styled.div`
   display: flex;
+  min-width: 500px;
   flex-direction: column;
   padding: 36px 40px;
   background-color: #fff;
@@ -44,29 +45,9 @@ const Label = styled.label`
   }
 `
 
-const Input = styled.input`
-  width: 430px;
-  padding: 14px 15px;
-  background: #FAFAFA;
-  border: 1px solid rgba(23, 23, 25, 0.1);
-  border-radius: 5px;
-
-  ::placeholder {
-    font-size: 20px;
-    color: #272727;
-    opacity: 0.3;
-  }
-
-  :focus {
-    outline: none;
-    border: 1px solid #1390E5;
-    background-color: rgba(197, 228, 249, 0.3);
-  }
-`
-
 const ModalButtons = styled.div`
   display: flex;
   justify-content: space-between;
 `
 
-export { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, Input, ModalButtons }
+export { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, ModalButtons }

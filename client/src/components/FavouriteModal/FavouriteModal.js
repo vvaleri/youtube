@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, Input, ModalButtons } from './favouriteModalStyles';
+import { ModalMain, ModalContainer, ModalTitle, ModalBox, Label,  ModalButtons } from './favouriteModalStyles';
 import { Button } from '../UI/Button/Button';
+import { Input } from '../UI/Input/Input';
 import axios from 'axios';
 
 export function FavouriteModal({ setModal }) {

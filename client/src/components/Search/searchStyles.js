@@ -48,32 +48,6 @@ const SearchInner = styled.div`
   position: relative;
 `
 
-const SearchInput = styled.input`
-  width: 536px;
-  height: 52px;
-  padding: 0 0 0 15px;
-  font-size: 20px;
-  border: 1px solid #D1D1D1;
-  border-radius: 5px 0 0 5px;
-
-  ::placeholder {
-    font-size: 20px;
-    line-height: 24px;
-    color: #272727;
-    opacity: 0.3;
-  }
-
-  :focus {
-    outline: none;
-    border: 1px solid #1390E5;
-    background-color: rgba(197, 228, 249, 0.3);
-  }
-
-  &.active {
-    width: 890px;
-  }
-`
-
 const LikeBtn = styled.button`
   display: none;
   position: absolute;
@@ -93,4 +67,4 @@ const LikeBtn = styled.button`
   }
 `
 
-export { Main, SearchContainer, SearchTitle, SearchInner, SearchInput, LikeBtn }
+export { Main, SearchContainer, SearchTitle, SearchInner, LikeBtn }

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Results, FavouriteModal, Header } from '../../components';
-import { Main, SearchContainer, SearchTitle, SearchInner, SearchInput, LikeBtn } from './searchStyles';
+import { Main, SearchContainer, SearchTitle, SearchInner, LikeBtn } from './searchStyles';
 import { Button } from '../UI/Button/Button';
+import { Input } from '../UI/Input/Input';
 import apiKey from '../../config/key';
 
 export const Search = () => {
@@ -14,7 +15,7 @@ export const Search = () => {
   const [ resultClass, setResultClass ] = useState('');
 
   const getVideo = async () => {
-    const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${ inputValue }&key=${ apiKey }`);
+    const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${ inputValue }&key=${ apiKey }&maxResults=20`);
     const result = await response.json(); 
     setVideo(result.items)
     setClassActive('active');
@@ -37,7 +38,8 @@ export const Search = () => {
         <SearchContainer className={ classActive }>
           <SearchTitle className={ classActive }>Поиск видео</SearchTitle>
           <SearchInner>
-            <SearchInput 
+            <Input
+              search 
               className={ classActive }
               type='text'
               placeholder='Что хотите посмотреть?'
@@ -45,7 +47,6 @@ export const Search = () => {
               onChange={ (e) => setInputValue(e.target.value) }
             />
             <LikeBtn onClick={ () => setModal(true) } className={ classActive }><img src="img/like.svg" alt="кнопка сохранить поиск"/></LikeBtn>
-            {/* <SearchBtn className={ classActive } onClick={ getVideo }>Найти</SearchBtn> */}
             <Button main onClick={ getVideo }>Найти</Button>
           </SearchInner>
           {

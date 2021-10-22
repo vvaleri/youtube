@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, Input, ModalButtons, CancelBtn, SaveBtn } from '../FavouriteModal/favouriteModalStyles';
+import { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, ModalButtons, CancelBtn, SaveBtn } from '../FavouriteModal/favouriteModalStyles';
+import { Input } from '../UI/Input/Input';
 import axios from 'axios';
 
 export function ChangeModal({ id, dataTitle, dataName, setModal }) {
