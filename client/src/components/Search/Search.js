@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Results, FavouriteModal, Header } from '../../components';
-import { Main, SearchContainer, SearchTitle, SearchInner, SearchInput, LikeBtn, SearchBtn } from './searchStyles';
+import { Main, SearchContainer, SearchTitle, SearchInner, SearchInput, LikeBtn } from './searchStyles';
+import { Button } from '../UI/Button/Button';
 import apiKey from '../../config/key';
 
-export function Search() {
+export const Search = () => {
 
   const [ video, setVideo ] = useState([]);
   const [ inputValue, setInputValue ] = useState('');
@@ -19,7 +20,7 @@ export function Search() {
     setClassActive('active');
     setResult(true);
     setResultClass('active');
-    localStorage.setItem('classResult', 'true');
+    // localStorage.setItem('classResult', 'true');
   }
 
   useEffect(() => {
@@ -44,7 +45,8 @@ export function Search() {
               onChange={ (e) => setInputValue(e.target.value) }
             />
             <LikeBtn onClick={ () => setModal(true) } className={ classActive }><img src="img/like.svg" alt="кнопка сохранить поиск"/></LikeBtn>
-            <SearchBtn className={ classActive } onClick={ getVideo }>Найти</SearchBtn>
+            {/* <SearchBtn className={ classActive } onClick={ getVideo }>Найти</SearchBtn> */}
+            <Button main onClick={ getVideo }>Найти</Button>
           </SearchInner>
           {
           results && <Results video={ video } inputValue={ inputValue } resultClass={ resultClass }/>

@@ -1,7 +1,7 @@
 import { Search, Favourites, Auth } from './components';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-function App() {
+export const App = () => {
   return (
     <BrowserRouter>
       <Switch>
@@ -12,5 +12,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;

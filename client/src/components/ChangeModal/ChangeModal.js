@@ -31,8 +31,8 @@ export function ChangeModal({ id, dataTitle, dataName, setModal }) {
           <Input value={ name } onChange={ e => setNameValue(e.target.value) } id="name" placeholder="Укажите название"/>
         </ModalBox>
         <ModalButtons>
-          <CancelBtn onClick={ () => setModal(false) }>Отмена</CancelBtn>
-          <SaveBtn onClick={ postItem } >Изменить</SaveBtn>
+          {/* <CancelBtn onClick={ () => setModal(false) }>Отмена</CancelBtn>
+          <SaveBtn onClick={ postItem } >Изменить</SaveBtn> */}
         </ModalButtons>
       </ModalContainer>
     </ModalMain>

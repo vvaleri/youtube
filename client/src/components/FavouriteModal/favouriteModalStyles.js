@@ -69,29 +69,4 @@ const ModalButtons = styled.div`
   justify-content: space-between;
 `
 
-const CancelBtn = styled.button`
-  padding: 12px 40px;
-  font-size: 20px;
-  color: #1390E5;
-  border: 1px solid #1390E5;
-  border-radius: 5px;
-  background: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-
-  :hover {
-    background-color: #e3f3ff;
-  }
-`
-
-const SaveBtn = styled(CancelBtn)`
-  padding: 12px 50px;
-  color: #fff;
-  background-color: #1390E5;
-
-  :hover {
-    background-color: #0057fa;
-  }
-`
-
-export { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, Input, ModalButtons, CancelBtn, SaveBtn }
+export { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, Input, ModalButtons }

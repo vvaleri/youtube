@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, Input, ModalButtons, CancelBtn, SaveBtn } from './favouriteModalStyles';
+import { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, Input, ModalButtons } from './favouriteModalStyles';
+import { Button } from '../UI/Button/Button';
 import axios from 'axios';
 
 export function FavouriteModal({ setModal }) {
@@ -37,8 +38,8 @@ export function FavouriteModal({ setModal }) {
           <Input value={ name } onChange={ e => setNameValue(e.target.value) } id="name" placeholder="Укажите название"/>
         </ModalBox>
         <ModalButtons>
-          <CancelBtn onClick={ () => setModal(false) }>Не сохранять</CancelBtn>
-          <SaveBtn onClick={ postItem } >Сохранить</SaveBtn>
+          <Button white onClick={ () => setModal(false) }>Не сохранять</Button>
+          <Button onClick={ postItem } >Сохранить</Button>
         </ModalButtons>
       </ModalContainer>
     </ModalMain>

@@ -62,20 +62,4 @@ const Password = styled(Login)`
   margin-bottom: 40px;
 `
 
-const Enter = styled.button`
-  padding: 14px 40px;
-  margin: 0 auto;
-  font-size: 20px;
-  color: #fff;
-  border: 1px solid #1390E5;
-  border-radius: 5px;
-  background-color: #1390E5;
-  cursor: pointer;
-  transition: background-color 0.3s;
-
-  :hover {
-    background-color: #0057fa;
-  }
-`
-
-export { Main, Container, Logo, Title, Inputs, Label, Form, Login, Password, Enter }
+export { Main, Container, Logo, Title, Inputs, Label, Form, Login, Password }

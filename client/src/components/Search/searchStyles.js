@@ -93,26 +93,4 @@ const LikeBtn = styled.button`
   }
 `
 
-const SearchBtn = styled.button`
-  display: flex;
-  justify-content: center;
-  padding: 14px 35px;
-  max-width: 150px;
-  color: #fff;
-  font-size: 20px;
-  background-color: #1390E5;
-  border: 1px solid #1390E5;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  transition: background-color 0.3s;
-
-  &.active {
-    padding: 14px 50px;
-  }
-
-  :hover {
-    background-color: #0057fa;
-  }
-`
-
-export { Main, SearchContainer, SearchTitle, SearchInner, SearchInput, LikeBtn, SearchBtn }
+export { Main, SearchContainer, SearchTitle, SearchInner, SearchInput, LikeBtn }
