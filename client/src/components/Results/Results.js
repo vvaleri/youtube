@@ -1,5 +1,5 @@
-import { ResultsContainer, ResultsHeader, ResultsText, ResultsTitle, ResultsButtons, ResultsBtn, ResultsContent } from '../styles/results'
-import { VideoItem } from '../components';
+import { ResultsContainer, ResultsHeader, ResultsText, ResultsTitle, ResultsButtons, ResultsBtn, ResultsContent } from './resultsStyles'
+import { VideoItem } from '../../components';
 import { useState } from 'react';
 
 export function Results({ video, inputValue, resultClass }) {

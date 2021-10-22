@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Header, FavouriteItem } from '../components';
-import { Main, FavouriteTitle } from '../styles/favourites';
+import { Header, FavouriteItem } from '../../components';
+import { Main, FavouriteTitle } from './favouritesStyles';
 import axios from 'axios';
 
 export function Favourites() {

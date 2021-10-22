@@ -1,4 +1,4 @@
-import { ItemContainer, ItemImg, ItemContent, ItemTitle, ItemText, ItemViews } from '../styles/videoItem';
+import { ItemContainer, ItemImg, ItemContent, ItemTitle, ItemText, ItemViews } from './videoItemStyles';
 
 export function VideoItem( { item, classItem }) {
   return(

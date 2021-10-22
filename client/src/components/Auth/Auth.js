@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Main, Container, Logo, Title, Inputs, Form, Label, Login, Password, Enter } from '../styles/auth';
+import { Main, Container, Logo, Title, Inputs, Form, Label, Login, Password, Enter } from './authStyles';
 import axios from 'axios';
 
 export function Auth() {

@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, Input, ModalButtons, CancelBtn, SaveBtn } from '../styles/favouriteModal';
+import { ModalMain, ModalContainer, ModalTitle, ModalBox, Label, Input, ModalButtons, CancelBtn, SaveBtn } from '../FavouriteModal/favouriteModalStyles';
 import axios from 'axios';
 
-export function FavouriteModal({ setModal }) {
+export function ChangeModal({ id, dataTitle, dataName, setModal }) {
 
-  const [ title, setTitleValue ] = useState('');
-  const [ name, setNameValue ] = useState('');
+  const [ title, setTitleValue ] = useState(dataTitle);
+  const [ name, setNameValue ] = useState(dataName);
   
   const postItem = () => {
     
@@ -14,7 +14,7 @@ export function FavouriteModal({ setModal }) {
       name
     }
 
-   axios.post('http://localhost:5000/items/add', valueText)
+   axios.put(`http://localhost:5000/items/update/${ id }`, valueText)
     .then(res => console.log(res.data))
   }
 
@@ -31,8 +31,8 @@ export function FavouriteModal({ setModal }) {
           <Input value={ name } onChange={ e => setNameValue(e.target.value) } id="name" placeholder="Укажите название"/>
         </ModalBox>
         <ModalButtons>
-          <CancelBtn onClick={ () => setModal(false) }>Не сохранять</CancelBtn>
-          <SaveBtn onClick={ postItem } >Сохранить</SaveBtn>
+          <CancelBtn onClick={ () => setModal(false) }>Отмена</CancelBtn>
+          <SaveBtn onClick={ postItem } >Изменить</SaveBtn>
         </ModalButtons>
       </ModalContainer>
     </ModalMain>

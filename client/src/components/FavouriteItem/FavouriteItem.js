@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { ChangeModal, DeleteModal } from '../components';
-import { FavouriteContainer, Item, Buttons, Btn } from '../styles/favourites';
+import { ChangeModal, DeleteModal } from '..';
+import { FavouriteContainer, Item, Buttons, Btn } from '../Favourites/favouritesStyles';
 
 export function FavouriteItem({ item }) {
 

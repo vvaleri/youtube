@@ -1,11 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
+import Roboto from './fonts/Roboto.woff';
 
 export const GlobalStyles = createGlobalStyle`
 
   @font-face{
     font-family: 'Roboto';
-    src: local('Roboto'), url('./fonts/Roboto.woff'), format('woff');
-    src: local('Roboto'), url('./fonts/Roboto.woff2'), format('woff2');
+    src: url(${ Roboto }) format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
   }
   
   * {
@@ -15,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: Roboto, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #FAFAFA;
     overflow-x: hidden;
   }

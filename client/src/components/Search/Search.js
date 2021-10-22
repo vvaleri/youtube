@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Results, FavouriteModal, Header } from '../components';
-import { Main, SearchContainer, SearchTitle, SearchInner, SearchInput, LikeBtn, SearchBtn } from '../styles/search';
-import apiKey from '../config/key';
+import { Results, FavouriteModal, Header } from '../../components';
+import { Main, SearchContainer, SearchTitle, SearchInner, SearchInput, LikeBtn, SearchBtn } from './searchStyles';
+import apiKey from '../../config/key';
 
 export function Search() {
 

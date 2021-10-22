@@ -1,4 +1,4 @@
-import { Overlay, Container, Text, Buttons, CancelBtn, SaveBtn } from '../styles/deleteModal';
+import { Overlay, Container, Text, Buttons, CancelBtn, SaveBtn } from './deleteModalStyles';
 import axios from 'axios';
 
 export function DeleteModal({ id, setDeleteModal }) {
