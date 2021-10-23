@@ -1,26 +1,5 @@
 import styled from 'styled-components/macro';
 
-const Overlay = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(29, 30, 51, 0.8);
-
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 20px 40px;
-  background-color: #fff;
-  border-radius: 10px;
-`;
-
 const Text = styled.p`
   margin-bottom: 20px;
   font-size: 18px;
@@ -57,4 +36,4 @@ const SaveBtn = styled(CancelBtn)`
   }
 `;
 
-export { Overlay, Container, Text, Buttons, CancelBtn, SaveBtn };
+export { Text, Buttons, CancelBtn, SaveBtn };
