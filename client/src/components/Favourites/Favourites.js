@@ -1,31 +1,31 @@
 import { useState, useEffect } from 'react';
-import { Header, FavouriteItem } from '../../components';
-import { Main, FavouriteTitle } from './favouritesStyles';
 import axios from 'axios';
+import { Header, FavouriteItem } from '..';
+import { Main, FavouriteTitle } from './favouritesStyles';
 
 export function Favourites() {
-
-  const [ favourites, setFavourites ] = useState([]);
+  const [favourites, setFavourites] = useState([]);
 
   useEffect(() => {
     let cleanupFunction = true;
 
     axios.get('http://localhost:5000/items')
-    .then(res => {
-      if(cleanupFunction) setFavourites(res.data)
-    })
-    return () => { cleanupFunction = false};
-  })
+      .then(res => {
+        if (cleanupFunction) setFavourites(res.data);
+      });
+    return () => { cleanupFunction = false; };
+  });
 
-  return(
+  return (
     <>
-      <Header/>
+      <Header />
       <Main>
         <FavouriteTitle>Избранное</FavouriteTitle>
         {
-          favourites.map(item => <FavouriteItem key={ item._id } item={ item } />)
+          // eslint-disable-next-line no-underscore-dangle
+          favourites.map(item => <FavouriteItem key={item._id} item={item} />)
         }
       </Main>
     </>
-  )
+  );
 }

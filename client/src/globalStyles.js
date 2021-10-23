@@ -5,7 +5,7 @@ export const GlobalStyles = createGlobalStyle`
 
   @font-face{
     font-family: 'Roboto';
-    src: url(${ Roboto }) format('woff');
+    src: url(${Roboto}) format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -34,4 +34,4 @@ export const GlobalStyles = createGlobalStyle`
   li {
     list-style: none;
   }
-`
+`;

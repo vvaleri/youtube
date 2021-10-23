@@ -5,17 +5,17 @@ const Main = styled.main`
    max-width: 1080px;
    min-height: 100vh;
    margin: 0 auto;
-`
+`;
 
 const FavouriteTitle = styled.h1`
   margin: 0 0 30px 0;
   font-size: 28px;
   line-height: 40px;
-`
+`;
 
 const FavouriteContainer = styled.ul`
   background-color: #fff;
-`
+`;
 
 const Item = styled.li`
   display: flex;
@@ -35,10 +35,10 @@ const Item = styled.li`
     }
   }
  
-`
+`;
 const Buttons = styled.div`
   
-`
+`;
 
 const Btn = styled.button`
   padding: 10px 0;
@@ -56,6 +56,6 @@ const Btn = styled.button`
   &:hover {
     color: #1390E5;
   }
-`
+`;
 
-export { Main, FavouriteTitle, FavouriteContainer, Item, Buttons, Btn }
+export { Main, FavouriteTitle, FavouriteContainer, Item, Buttons, Btn };

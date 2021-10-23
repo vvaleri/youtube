@@ -20,7 +20,7 @@ const MainButton = styled.button`
     }
   }
 
-  ${ props => props.white && css`
+  ${props => props.white && css`
       color: #1390E5;
       background-color: transparent;
 
@@ -30,19 +30,19 @@ const MainButton = styled.button`
           background-color: #e3f3ff;
         }
       }
-  ` }
+  `}
 
-  ${ props => props.main && css`
+  ${props => props.main && css`
        flex: 0 0 150px;
        border-radius: 0 5px 5px 0;
-  ` }
+  `}
 
-  ${ props => props.register && css`
+  ${props => props.register && css`
        flex: 0 0 auto;
        padding-left: 40px;
        padding-right: 40px;
        margin: 0 auto;
-  ` }
+  `}
 `;
 
-export { MainButton }
+export { MainButton };

@@ -14,7 +14,7 @@ const Main = styled.main`
     align-items: flex-start;
     padding: 120px 20px 0;
   }
-`
+`;
 
 const SearchContainer = styled.div`
   display: flex;
@@ -29,7 +29,7 @@ const SearchContainer = styled.div`
     margin: 0 auto;
     width: 100%
   }
-`
+`;
 
 const SearchTitle = styled.h1`
   margin: 0 0 40px 0;
@@ -41,12 +41,12 @@ const SearchTitle = styled.h1`
     font-size: 28px;
     line-height:40px;
   }
-`
+`;
 
 const SearchInner = styled.div`
   display: flex;
   position: relative;
-`
+`;
 
 const LikeBtn = styled.button`
   display: none;
@@ -65,6 +65,6 @@ const LikeBtn = styled.button`
   :hover {
     transform: scale(1.1);
   }
-`
+`;
 
-export { Main, SearchContainer, SearchTitle, SearchInner, LikeBtn }
+export { Main, SearchContainer, SearchTitle, SearchInner, LikeBtn };

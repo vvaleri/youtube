@@ -21,7 +21,7 @@ const MainInput = styled.input`
     background-color: rgba(197, 228, 249, 0.3);
   }
 
-  ${ props => props.search && css`
+  ${props => props.search && css`
       width: 536px; 
       height: 52px;
       border-radius: 5px 0 0 5px;
@@ -29,7 +29,7 @@ const MainInput = styled.input`
        &.active {
         width: 890px;
       }
-  ` }
+  `}
 `;
 
-export { MainInput }
+export { MainInput };

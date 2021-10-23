@@ -11,7 +11,7 @@ const Overlay = styled.div`
   left: 0;
   background-color: rgba(29, 30, 51, 0.8);
 
-`
+`;
 
 const Container = styled.div`
   display: flex;
@@ -19,18 +19,18 @@ const Container = styled.div`
   padding: 20px 40px;
   background-color: #fff;
   border-radius: 10px;
-`
+`;
 
 const Text = styled.p`
   margin-bottom: 20px;
   font-size: 18px;
   line-height: 28px;
-`
+`;
 
 const Buttons = styled.div`
   display: flex;
   justify-content: space-between;
-`
+`;
 
 const CancelBtn = styled.button`
   padding: 10px 32px;
@@ -45,7 +45,7 @@ const CancelBtn = styled.button`
   :hover {
     background-color: #e3f3ff;
   }
-`
+`;
 
 const SaveBtn = styled(CancelBtn)`
   padding: 10px 30px;
@@ -55,6 +55,6 @@ const SaveBtn = styled(CancelBtn)`
   :hover {
     background-color: #0057fa;
   }
-`
+`;
 
-export { Overlay, Container, Text, Buttons, CancelBtn, SaveBtn }
+export { Overlay, Container, Text, Buttons, CancelBtn, SaveBtn };

@@ -1,7 +1,5 @@
 import { MainInput } from './inputStyles';
 
-export const Input = props => {
-  return (
-    <MainInput { ...props } />
-  )
-}
+export const Input = props => (
+  <MainInput {...props} />
+);

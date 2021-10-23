@@ -12,7 +12,7 @@ const ItemContainer = styled.li`
     width: 100%;
     align-items: center;
   }
-`
+`;
 
 const ItemImg = styled.div`
   display: flex; 
@@ -30,7 +30,7 @@ const ItemImg = styled.div`
   &.list {
     margin-right: 20px;
   }
-`
+`;
 
 const ItemContent = styled.div`
   display: flex;
@@ -38,7 +38,7 @@ const ItemContent = styled.div`
   flex-grow: 1;
   font-size: 14px;
   line-height: 16px; 
-`
+`;
 
 const ItemTitle = styled.h2`
   flex-grow: 1;
@@ -46,15 +46,15 @@ const ItemTitle = styled.h2`
   font-size: 14px;
   line-height: 16px;
   margin-bottom: 8px;
-`
+`;
 
 const ItemText = styled.p`
   flex-grow: 1;
   color: rgba(23, 23, 25, 0.3);
-` 
+`;
 
 const ItemViews = styled.div`
   color: rgba(23, 23, 25, 0.3);
-`
+`;
 
-export { ItemContainer, ItemImg, ItemContent, ItemTitle, ItemText, ItemViews }
+export { ItemContainer, ItemImg, ItemContent, ItemTitle, ItemText, ItemViews };

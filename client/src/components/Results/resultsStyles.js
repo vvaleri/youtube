@@ -1,13 +1,13 @@
 import styled from 'styled-components/macro';
 
-const ResultsContainer = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   margin: 40px 0 0 0;
-`
+`;
 
-const ResultsHeader = styled.div`
+const Header = styled.div`
   display: none;
   justify-content: space-between;
   margin-bottom: 20px;
@@ -15,25 +15,25 @@ const ResultsHeader = styled.div`
   &.active {
     display: flex;
   }
-`
+`;
 
-const ResultsText = styled.div`
+const Text = styled.div`
   display: flex;
   align-items: center;
   font-size: 16px;
   line-height: 24px;
-`
+`;
 
-const ResultsTitle = styled.div`
+const Title = styled.div`
   margin: 0 15px 0 0;
   
-`
+`;
 
-const ResultsButtons = styled.div`
+const Buttons = styled.div`
   
-`
+`;
 
-const ResultsBtn = styled.button`
+const Btn = styled.button`
   margin: 0 0 0 15px;
   border: none;
   background: none;
@@ -60,13 +60,13 @@ const ResultsBtn = styled.button`
     opacity: 0.9;
     }
   }
-`
+`;
 
-const ResultsContent = styled.ul`
+const Content = styled.ul`
   display: flex;
   flex-wrap: wrap;
   width: calc(100% + 20px);
   margin-bottom: -20px;
-`
+`;
 
-export { ResultsContainer, ResultsHeader, ResultsTitle, ResultsText, ResultsButtons, ResultsBtn, ResultsContent }
+export { Container, Header, Title, Text, Buttons, Btn, Content };
