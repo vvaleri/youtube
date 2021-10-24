@@ -4,8 +4,8 @@ import { Header } from '..';
 import { Results } from '../Results/Results';
 import { Button } from '../UI/Button/Button';
 import { Input } from '../UI/Input/Input';
-import { ItemModal } from '../ItemModal/ItemModal';
-import { Main, SearchContainer, SearchTitle, SearchInner, LikeBtn } from './searchStyles';
+import { Modal } from '../UI/Modal/Modal';
+import { Main, SearchContainer, SearchTitle, SearchInner, LikeBtn, ModalTitle, Label, ModalButtons } from './searchStyles';
 import useScrollBlock from '../../hooks/useScrollBlock';
 import apiKey from '../../config/key';
 
@@ -18,6 +18,9 @@ export const Search = () => {
 
   const [modalActive, setModalActive] = useState(false);
   const [blockScroll, allowScroll] = useScrollBlock();
+
+  const [title, setTitleValue] = useState('');
+  const [name, setNameValue] = useState('');
 
   const getVideo = async () => {
     const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${inputValue}&key=${apiKey}&maxResults=20`);
@@ -41,7 +44,12 @@ export const Search = () => {
     blockScroll();
   };
 
-  const postItem = valueText => {
+  const postItem = () => {
+    const valueText = {
+      title,
+      name
+    };
+
     axios.post('http://localhost:5000/items/add', valueText)
       .then(res => {
         if (res.ok) {
@@ -75,12 +83,25 @@ export const Search = () => {
           results && <Results video={video} inputValue={inputValue} resultClass={resultClass} />
           }
         </SearchContainer>
-        <ItemModal
-          modalActive={modalActive}
-          setModalActive={setModalActive}
+        <Modal
+          active={modalActive}
+          setActive={setModalActive}
           allowScroll={allowScroll}
-          postItem={postItem}
-        />
+        >
+          <ModalTitle>Сохранить запрос</ModalTitle>
+          <Label>
+            <span>Запрос</span>
+            <Input value={title} onChange={e => setTitleValue(e.target.value)} />
+          </Label>
+          <Label>
+            <span>Название</span>
+            <Input value={name} onChange={e => setNameValue(e.target.value)} placeholder="Укажите название" />
+          </Label>
+          <ModalButtons>
+            <Button white onClick={() => setModalActive(false)}>Не сохранять</Button>
+            <Button onClick={postItem}>Сохранить</Button>
+          </ModalButtons>
+        </Modal>
       </Main>
     </>
   );
