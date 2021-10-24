@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Header, FavouriteItem } from '..';
 import { Main, FavouriteTitle } from './favouritesStyles';
 
-export function Favourites() {
+export const Favourites = () => {
   const [favourites, setFavourites] = useState([]);
 
   useEffect(() => {
@@ -22,10 +22,9 @@ export function Favourites() {
       <Main>
         <FavouriteTitle>Избранное</FavouriteTitle>
         {
-          // eslint-disable-next-line no-underscore-dangle
           favourites.map(item => <FavouriteItem key={item._id} item={item} />)
         }
       </Main>
     </>
   );
-}
+};

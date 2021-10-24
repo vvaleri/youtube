@@ -8,6 +8,7 @@ import { Modal } from '../UI/Modal/Modal';
 import { Main, SearchContainer, SearchTitle, SearchInner, LikeBtn, ModalTitle, Label, ModalButtons } from './searchStyles';
 import useScrollBlock from '../../hooks/useScrollBlock';
 import apiKey from '../../config/key';
+import LikeIcon from '../../img/like.svg';
 
 export const Search = () => {
   const [video, setVideo] = useState([]);
@@ -76,7 +77,7 @@ export const Search = () => {
               value={inputValue}
               onChange={e => setInputValue(e.target.value)}
             />
-            <LikeBtn className={classActive} onClick={openModal}><img src="img/like.svg" alt="кнопка сохранить поиск" /></LikeBtn>
+            <LikeBtn className={classActive} onClick={openModal}><img src={LikeIcon} alt="кнопка сохранить поиск" /></LikeBtn>
             <Button main onClick={getVideo}>Найти</Button>
           </SearchInner>
           {

@@ -3,8 +3,9 @@ import axios from 'axios';
 import { Main, Container, Logo, Title, Inputs, Form, Label } from './authStyles';
 import { Button } from '../UI/Button/Button';
 import { Input } from '../UI/Input/Input';
+import Icon from '../../img/logo.svg';
 
-export function Auth() {
+export const Auth = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -21,9 +22,8 @@ export function Auth() {
   return (
     <Main>
       <Container>
-        <Logo><img src="img/logo.svg" alt="логотип" /></Logo>
+        <Logo><img src={Icon} alt="логотип" /></Logo>
         <Title>Вход</Title>
-
         <Form>
           <Inputs>
             <Label>E-mail</Label>
@@ -32,11 +32,8 @@ export function Auth() {
             <Input value={password} onChange={e => setPassword(e.target.value)} type="password" />
           </Inputs>
           <Button register onClick={initRegistation}>Зарегистрироваться</Button>
-
         </Form>
-
       </Container>
     </Main>
-
   );
-}
+};

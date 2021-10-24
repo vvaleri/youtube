@@ -1,7 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { HeaderContainer, Inner, Logo, Nav, Menu, Item } from './headerStyles';
+import Icon from '../../img/logo.svg';
 
-export function Header() {
+export const Header = () => {
   const menuItems = [
     { to: '/search', name: 'Поиск' },
     { to: '/favourites', name: 'Избранное' }
@@ -10,7 +11,7 @@ export function Header() {
   return (
     <HeaderContainer>
       <Inner>
-        <Logo><img src="img/logo.svg" alt="логотип" /></Logo>
+        <Logo><img src={Icon} alt="логотип" /></Logo>
         <Nav>
           <Menu>
             {
@@ -30,4 +31,4 @@ export function Header() {
       </Inner>
     </HeaderContainer>
   );
-}
+};

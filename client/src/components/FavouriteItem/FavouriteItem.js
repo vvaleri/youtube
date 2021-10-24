@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import { useState } from 'react';
 import axios from 'axios';
 import { DeleteModal } from '../DeleteModal/DeleteModal';
@@ -8,7 +7,7 @@ import { Input } from '../UI/Input/Input';
 import { Button } from '../UI/Button/Button';
 import useScrollBlock from '../../hooks/useScrollBlock';
 
-export function FavouriteItem({ item }) {
+export const FavouriteItem = ({ item }) => {
   const [deleteModal, setDeleteModal] = useState(false);
 
   const [modalActive, setModalActive] = useState(false);
@@ -73,4 +72,4 @@ export function FavouriteItem({ item }) {
     </FavouriteContainer>
 
   );
-}
+};

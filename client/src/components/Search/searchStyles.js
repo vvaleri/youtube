@@ -49,7 +49,7 @@ const SearchInner = styled.div`
 `;
 
 const LikeBtn = styled.button`
-  /* display: none; */
+  display: none;
   position: absolute;
   top: 15px;
   right: 165px;
