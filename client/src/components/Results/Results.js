@@ -1,11 +1,13 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Container, Header, Text, Title, Buttons, Btn, Content } from './resultsStyles';
 import { VideoItem } from '../VideoItem/VideoItem';
 import ListIcon from '../../img/list.svg';
 import GridIcon from '../../img/grid.svg';
 
-export const Results = ({ video, inputValue, resultClass }) => {
+export const Results = ({ inputValue, resultClass }) => {
   const [classItem, setClassItem] = useState('');
+  const { video } = useSelector(state => state.videoReducer);
 
   return (
     <Container>

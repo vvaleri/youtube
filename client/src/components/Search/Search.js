@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
 import { Header } from '..';
 import { Results } from '../Results/Results';
 import { Button } from '../UI/Button/Button';
@@ -9,12 +10,12 @@ import { Main, SearchContainer, SearchTitle, SearchInner, LikeBtn, ModalTitle, L
 import useScrollBlock from '../../hooks/useScrollBlock';
 import apiKey from '../../config/key';
 import LikeIcon from '../../img/like.svg';
+import { searchVideo } from '../../actions/videoAction';
 
 export const Search = () => {
-  const [video, setVideo] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [classActive, setClassActive] = useState('');
-  const [results, setResult] = useState(false);
+  const [results, setResult] = useState(true);
   const [resultClass, setResultClass] = useState('');
 
   const [modalActive, setModalActive] = useState(false);
@@ -23,22 +24,21 @@ export const Search = () => {
   const [title, setTitleValue] = useState('');
   const [name, setNameValue] = useState('');
 
-  const getVideo = async () => {
-    const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${inputValue}&key=${apiKey}&maxResults=20`);
-    const result = await response.json();
-    setVideo(result.items);
-    setClassActive('active');
-    setResult(true);
-    setResultClass('active');
-    // localStorage.setItem('classResult', 'true');
-  };
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (localStorage.getItem('classResult')) {
-      setClassActive('active');
-      setResult(true);
-    }
-  }, []);
+  // const getVideo = async () => {
+  //   setClassActive('active');
+  //   setResult(true);
+  //   setResultClass('active');
+  //   // localStorage.setItem('classResult', 'true');
+  // };
+
+  // useEffect(() => {
+  //   if (localStorage.getItem('classResult')) {
+  //     setClassActive('active');
+  //     setResult(true);
+  //   }
+  // }, []);
 
   const openModal = () => {
     setModalActive(true);
@@ -78,10 +78,10 @@ export const Search = () => {
               onChange={e => setInputValue(e.target.value)}
             />
             <LikeBtn className={classActive} onClick={openModal}><img src={LikeIcon} alt="кнопка сохранить поиск" /></LikeBtn>
-            <Button main onClick={getVideo}>Найти</Button>
+            <Button main onClick={() => dispatch(searchVideo(inputValue, apiKey))}>Найти</Button>
           </SearchInner>
           {
-          results && <Results video={video} inputValue={inputValue} resultClass={resultClass} />
+          results && <Results inputValue={inputValue} resultClass={resultClass} />
           }
         </SearchContainer>
         <Modal
