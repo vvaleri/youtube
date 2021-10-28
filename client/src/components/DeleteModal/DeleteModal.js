@@ -1,12 +1,10 @@
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
 import { Modal } from '../UI/Modal/Modal';
 import { Text, Buttons, CancelBtn, SaveBtn } from './deleteModalStyles';
+import { deleteItems } from '../../actions/favouritesAction';
 
 export const DeleteModal = ({ id, deleteModal, setDeleteModal, allowScroll }) => {
-  const deleteItem = () => {
-    axios.delete(`http://localhost:5000/items/${id}`)
-      .then(res => console.log(res.data));
-  };
+  const dispatch = useDispatch();
 
   const closeModal = () => {
     setDeleteModal(false);
@@ -22,7 +20,7 @@ export const DeleteModal = ({ id, deleteModal, setDeleteModal, allowScroll }) =>
       <Text>Вы действительно хотите удалить этот запрос?</Text>
       <Buttons>
         <CancelBtn onClick={closeModal}>Отмена</CancelBtn>
-        <SaveBtn onClick={deleteItem}>Удалить</SaveBtn>
+        <SaveBtn onClick={() => dispatch(deleteItems(id))}>Удалить</SaveBtn>
       </Buttons>
     </Modal>
   );

@@ -1,20 +1,16 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Header, FavouriteItem } from '..';
 import { Main, FavouriteTitle } from './favouritesStyles';
+import { getItems } from '../../actions/favouritesAction';
 
 export const Favourites = () => {
-  const [favourites, setFavourites] = useState([]);
+  const dispatch = useDispatch();
+  const { favourites } = useSelector(state => state.favouritesReducer);
 
   useEffect(() => {
-    let cleanupFunction = true;
-
-    axios.get('http://localhost:5000/items')
-      .then(res => {
-        if (cleanupFunction) setFavourites(res.data);
-      });
-    return () => { cleanupFunction = false; };
-  });
+    dispatch(getItems());
+  }, [dispatch]);
 
   return (
     <>
