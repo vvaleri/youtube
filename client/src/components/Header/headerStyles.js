@@ -4,6 +4,7 @@ const HeaderContainer = styled.header`
   position: fixed;
   width: 100%;
   background-color: #fff;
+  z-index: 5;
 `;
 
 const Inner = styled.div`

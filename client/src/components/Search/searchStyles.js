@@ -5,39 +5,30 @@ const Main = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center; 
-  padding: 0 20px 0;
   min-height: 100vh;
-  background-color: #FAFAFA;
-
-  &.active {
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 120px 20px 0;
-  }
 `;
 
 const SearchContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 20px 20px;
   max-width: 1080px;
 
   &.active {
     align-items: flex-start;
-    justify-content: flex-start;
-    margin: 0 auto;
+    padding-top: 120px;
     width: 100%
   }
 `;
 
 const SearchTitle = styled.h1`
-  margin: 0 0 40px 0;
+  margin-bottom: 40px;
   font-size: 36px;
   line-height: 52px;
 
   &.active {
-    margin: 0 0 10px 0;
+    margin-bottom: 10px;
     font-size: 28px;
     line-height:40px;
   }
@@ -49,7 +40,7 @@ const SearchInner = styled.div`
 `;
 
 const LikeBtn = styled.button`
-  display: none;
+  display: block;
   position: absolute;
   top: 15px;
   right: 165px;
@@ -58,12 +49,11 @@ const LikeBtn = styled.button`
   cursor: pointer;
   transition: transform 0.3s;
 
-  &.active {
-    display: block;
-  }
-
-  :hover {
-    transform: scale(1.1);
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
   }
 `;
 

@@ -1,5 +1,7 @@
 const defaultState = {
-  video: []
+  video: [],
+  results: false,
+  isActive: false
 };
 
 const SEARCH_VIDEO = 'SEARCH_VIDEO';
@@ -7,7 +9,12 @@ const SEARCH_VIDEO = 'SEARCH_VIDEO';
 export const videoReducer = (state = defaultState, action) => {
   switch (action.type) {
     case SEARCH_VIDEO:
-      return { ...state, video: [...state.video, ...action.payload] };
+      return {
+        ...state,
+        video: [...state.video, ...action.payload],
+        results: true,
+        isActive: true
+      };
 
     default:
       return state;

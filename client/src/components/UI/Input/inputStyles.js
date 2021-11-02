@@ -27,7 +27,7 @@ const MainInput = styled.input`
       border-radius: 5px 0 0 5px;
 
        &.active {
-        width: 890px;
+        width: 910px;
       }
   `}
 `;

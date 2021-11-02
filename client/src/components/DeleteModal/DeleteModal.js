@@ -11,6 +11,11 @@ export const DeleteModal = ({ id, deleteModal, setDeleteModal, allowScroll }) =>
     allowScroll();
   };
 
+  const deleteItemsById = () => {
+    dispatch(deleteItems(id));
+    closeModal();
+  };
+
   return (
     <Modal
       active={deleteModal}
@@ -20,7 +25,7 @@ export const DeleteModal = ({ id, deleteModal, setDeleteModal, allowScroll }) =>
       <Text>Вы действительно хотите удалить этот запрос?</Text>
       <Buttons>
         <CancelBtn onClick={closeModal}>Отмена</CancelBtn>
-        <SaveBtn onClick={() => dispatch(deleteItems(id))}>Удалить</SaveBtn>
+        <SaveBtn onClick={deleteItemsById}>Удалить</SaveBtn>
       </Buttons>
     </Modal>
   );

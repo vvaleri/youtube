@@ -18,6 +18,7 @@ const Container = styled.div`
   transform: scale(1.2);
   visibility: hidden;
   opacity: 0;
+  z-index: 20;
 
   &::-webkit-scrollbar {
     display: none;

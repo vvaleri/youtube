@@ -8,13 +8,10 @@ const Container = styled.div`
 `;
 
 const Header = styled.div`
-  display: none;
+  display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 
-  &.active {
-    display: flex;
-  }
 `;
 
 const Text = styled.div`

@@ -5,13 +5,13 @@ import { VideoItem } from '../VideoItem/VideoItem';
 import ListIcon from '../../img/list.svg';
 import GridIcon from '../../img/grid.svg';
 
-export const Results = ({ inputValue, resultClass }) => {
+export const Results = ({ inputValue }) => {
   const [classItem, setClassItem] = useState('');
   const { video } = useSelector(state => state.videoReducer);
 
   return (
     <Container>
-      <Header className={resultClass}>
+      <Header>
         <Text>
           <Title>
             Видео по запросу &quot;

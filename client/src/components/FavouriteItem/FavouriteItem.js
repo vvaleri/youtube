@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { DeleteModal } from '../DeleteModal/DeleteModal';
 import { FavouriteContainer, Item, Buttons, Btn, ModalTitle, Label, ModalButtons } from './favouriteItemStyles';
@@ -6,6 +7,7 @@ import { Modal } from '../UI/Modal/Modal';
 import { Input } from '../UI/Input/Input';
 import { Button } from '../UI/Button/Button';
 import useScrollBlock from '../../hooks/useScrollBlock';
+import { updateItem } from '../../actions/favouritesAction';
 
 export const FavouriteItem = ({ item }) => {
   const [deleteModal, setDeleteModal] = useState(false);
@@ -16,13 +18,18 @@ export const FavouriteItem = ({ item }) => {
   const [title, setTitleValue] = useState(item.title);
   const [name, setNameValue] = useState(item.name);
 
+  const dispatch = useDispatch();
+
   const postItem = () => {
     const valueText = {
+      id: item._id,
       title,
       name
     };
-    axios.put(`http://localhost:5000/items/update/${item._id}`, valueText)
-      .then(res => console.log(res.data));
+
+    dispatch(updateItem(valueText));
+    setDeleteModal(false);
+    allowScroll();
   };
 
   const openModal = () => {

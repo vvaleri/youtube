@@ -18,6 +18,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    height: 100%;
     font-family: 'Roboto', sans-serif;
     background-color: #FAFAFA;
     overflow-x: hidden;
