@@ -1,20 +1,18 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { authUserData } from '../../actions/userAction';
+import { NavLink } from 'react-router-dom';
+import { postUserData } from '../../actions/userAction';
 import { LoginForm } from '../LoginForm/LoginForm';
 
-export const Auth = () => {
+export const Registration = () => {
   const [inputValue, setInputValue] = useState({ email: '', password: '' });
 
-  const dispatch = useDispatch();
-
-  const initAuth = e => {
+  const initRegistation = e => {
     e.preventDefault();
     const userData = {
       email: inputValue.email,
       password: inputValue.password
     };
-    dispatch(authUserData(userData));
+    postUserData(userData);
   };
 
   return (
@@ -23,8 +21,11 @@ export const Auth = () => {
       email={inputValue.email}
       password={inputValue.password}
       setInputValue={setInputValue}
-      textButton="Войти"
-      buttonAction={initAuth}
-    />
+      textButton="Зарегистрироваться"
+      buttonAction={initRegistation}
+    >
+      <div>Уже зарегистрированы?</div>
+      <NavLink exact to="/login">войти</NavLink>
+    </LoginForm>
   );
 };

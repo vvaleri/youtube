@@ -15,10 +15,10 @@ const database = require('./config/keys').mongoURI;
 mongoose
   .connect(database)
   .then(() => console.log('connect...'));
-  // .catch(err => console.log(err));
+// .catch(err => console.log(err));
 
 app.use('/items', items);
-app.use('/auth', user);
+app.use('/users', user);
 
 const port = process.env.PORT || 5000;
 
