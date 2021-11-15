@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { showAllItems, deleteFavouriteItems, addFavouriteItem, updateFavouriteItem } from '../store/reducers/favouritesReducer';
 
-export const getItems = () => dispatch => {
-  axios.get('http://localhost:5000/items')
+export const getItems = email => dispatch => {
+  axios.get(`http://localhost:5000/items/${email}`)
     .then(result => {
       dispatch(showAllItems(result.data));
     })

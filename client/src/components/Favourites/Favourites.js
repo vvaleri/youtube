@@ -7,10 +7,13 @@ import { getItems } from '../../actions/favouritesAction';
 export const Favourites = () => {
   const dispatch = useDispatch();
   const { favourites } = useSelector(state => state.favouritesReducer);
+  const { user, isAuth } = useSelector(state => state.userReducer);
 
   useEffect(() => {
-    dispatch(getItems());
-  }, [dispatch]);
+    if (isAuth) {
+      dispatch(getItems(user.email));
+    }
+  }, [isAuth]);
 
   return (
     <>

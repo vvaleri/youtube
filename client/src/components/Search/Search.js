@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Header } from '..';
@@ -23,6 +24,7 @@ export const Search = () => {
 
   const dispatch = useDispatch();
   const { results, isActive } = useSelector(state => state.videoReducer);
+  const { user } = useSelector(state => state.userReducer);
 
   const openModal = () => {
     setModalActive(true);
@@ -32,7 +34,8 @@ export const Search = () => {
   const postItem = () => {
     const valueText = {
       title,
-      name
+      name,
+      userEmail: user.email
     };
 
     dispatch(addItem(valueText));
@@ -55,9 +58,12 @@ export const Search = () => {
               value={inputValue}
               onChange={e => setInputValue(e.target.value)}
             />
-            {
+            {/* {
               isActive && <LikeBtn onClick={openModal}><img src={LikeIcon} alt="кнопка сохранить поиск" /></LikeBtn>
-            }
+            } */}
+
+            <LikeBtn onClick={openModal}><img src={LikeIcon} alt="кнопка сохранить поиск" /></LikeBtn>
+
             <Button main onClick={() => dispatch(searchVideo(inputValue, apiKey))}>Найти</Button>
           </SearchInner>
           {

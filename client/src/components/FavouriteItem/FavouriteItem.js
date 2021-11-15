@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { DeleteModal } from '../DeleteModal/DeleteModal';
 import { FavouriteContainer, Item, Buttons, Btn, ModalTitle, Label, ModalButtons } from './favouriteItemStyles';
@@ -19,12 +19,14 @@ export const FavouriteItem = ({ item }) => {
   const [name, setNameValue] = useState(item.name);
 
   const dispatch = useDispatch();
+  const { user } = useSelector(state => state.userReducer);
 
   const postItem = () => {
     const valueText = {
       id: item._id,
       title,
-      name
+      name,
+      userEmail: user.email
     };
 
     dispatch(updateItem(valueText));
