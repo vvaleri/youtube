@@ -20,7 +20,7 @@ export const App = () => {
 
   return (
     <BrowserRouter>
-      {!isAuth
+      {/* {!isAuth
         && (
           <Switch>
             <Route path="/" exact component={Registration} />
@@ -28,7 +28,13 @@ export const App = () => {
             <Route path="/search" exact component={Search} />
             <Route path="/favourites" exact component={Favourites} />
           </Switch>
-        )}
+        )} */}
+      <Switch>
+        <Route path="/" exact component={Registration} />
+        <Route path="/login" exact component={Auth} />
+        <Route path="/search" exact component={Search} />
+        <Route path="/favourites" exact component={Favourites} />
+      </Switch>
     </BrowserRouter>
   );
 };

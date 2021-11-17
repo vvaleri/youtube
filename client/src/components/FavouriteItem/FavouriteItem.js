@@ -1,13 +1,10 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
 import { DeleteModal } from '../DeleteModal/DeleteModal';
-import { FavouriteContainer, Item, Buttons, Btn, ModalTitle, Label, ModalButtons } from './favouriteItemStyles';
-import { Modal } from '../UI/Modal/Modal';
-import { Input } from '../UI/Input/Input';
-import { Button } from '../UI/Button/Button';
+import { FavouriteContainer, Item, Buttons, Btn } from './favouriteItemStyles';
 import useScrollBlock from '../../hooks/useScrollBlock';
 import { updateItem } from '../../actions/favouritesAction';
+import { MainModal } from '../MainModal/MainModal';
 
 export const FavouriteItem = ({ item }) => {
   const [deleteModal, setDeleteModal] = useState(false);
@@ -15,8 +12,7 @@ export const FavouriteItem = ({ item }) => {
   const [modalActive, setModalActive] = useState(false);
   const [blockScroll, allowScroll] = useScrollBlock();
 
-  const [title, setTitleValue] = useState(item.title);
-  const [name, setNameValue] = useState(item.name);
+  const [inputForm, setInputForm] = useState({ title: item.title, name: item.name });
 
   const dispatch = useDispatch();
   const { user } = useSelector(state => state.userReducer);
@@ -24,8 +20,8 @@ export const FavouriteItem = ({ item }) => {
   const postItem = () => {
     const valueText = {
       id: item._id,
-      title,
-      name,
+      title: inputForm.title,
+      name: inputForm.name,
       userEmail: user.email
     };
 
@@ -53,25 +49,15 @@ export const FavouriteItem = ({ item }) => {
           <Btn onClick={openDeleteModal}>удалить</Btn>
         </Buttons>
       </Item>
-      <Modal
-        active={modalActive}
-        setActive={setModalActive}
+      <MainModal
+        modalActive={modalActive}
+        setModalActive={setModalActive}
         allowScroll={allowScroll}
-      >
-        <ModalTitle>Сохранить запрос</ModalTitle>
-        <Label>
-          <span>Запрос</span>
-          <Input value={title} onChange={e => setTitleValue(e.target.value)} />
-        </Label>
-        <Label>
-          <span>Название</span>
-          <Input value={name} onChange={e => setNameValue(e.target.value)} placeholder="Укажите название" />
-        </Label>
-        <ModalButtons>
-          <Button white onClick={() => setModalActive(false)}>Отмена</Button>
-          <Button onClick={postItem}>Изменить</Button>
-        </ModalButtons>
-      </Modal>
+        postItem={postItem}
+        inputForm={inputForm}
+        setInputForm={setInputForm}
+        textBtn="Изменить"
+      />
       <DeleteModal
         id={item._id}
         deleteModal={deleteModal}

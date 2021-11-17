@@ -21,7 +21,7 @@ export const Favourites = () => {
       <Main>
         <FavouriteTitle>Избранное</FavouriteTitle>
         {
-          favourites.map(item => <FavouriteItem key={item._id} item={item} />)
+          favourites.map(item => <FavouriteItem key={item._id || item.id} item={item} />)
         }
       </Main>
     </>

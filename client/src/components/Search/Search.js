@@ -5,13 +5,13 @@ import { Header } from '..';
 import { Results } from '../Results/Results';
 import { Button } from '../UI/Button/Button';
 import { Input } from '../UI/Input/Input';
-import { Modal } from '../UI/Modal/Modal';
-import { Main, SearchContainer, SearchTitle, SearchInner, LikeBtn, ModalTitle, Label, ModalButtons } from './searchStyles';
+import { Main, SearchContainer, SearchTitle, SearchInner, LikeBtn } from './searchStyles';
 import useScrollBlock from '../../hooks/useScrollBlock';
 import apiKey from '../../config/key';
 import LikeIcon from '../../img/like.svg';
 import { searchVideo } from '../../actions/videoAction';
 import { addItem } from '../../actions/favouritesAction';
+import { MainModal } from '../MainModal/MainModal';
 
 export const Search = () => {
   const [inputValue, setInputValue] = useState('');
@@ -19,8 +19,7 @@ export const Search = () => {
   const [modalActive, setModalActive] = useState(false);
   const [blockScroll, allowScroll] = useScrollBlock();
 
-  const [title, setTitleValue] = useState('');
-  const [name, setNameValue] = useState('');
+  const [inputForm, setInputForm] = useState({ title: '', name: '' });
 
   const dispatch = useDispatch();
   const { results, isActive } = useSelector(state => state.videoReducer);
@@ -33,8 +32,8 @@ export const Search = () => {
 
   const postItem = () => {
     const valueText = {
-      title,
-      name,
+      title: inputForm.title,
+      name: inputForm.name,
       userEmail: user.email
     };
 
@@ -70,25 +69,15 @@ export const Search = () => {
           results && <Results inputValue={inputValue} />
           }
         </SearchContainer>
-        <Modal
-          active={modalActive}
-          setActive={setModalActive}
+        <MainModal
+          modalActive={modalActive}
+          setModalActive={setModalActive}
           allowScroll={allowScroll}
-        >
-          <ModalTitle>Сохранить запрос</ModalTitle>
-          <Label>
-            <span>Запрос</span>
-            <Input value={title} onChange={e => setTitleValue(e.target.value)} />
-          </Label>
-          <Label>
-            <span>Название</span>
-            <Input value={name} onChange={e => setNameValue(e.target.value)} placeholder="Укажите название" />
-          </Label>
-          <ModalButtons>
-            <Button white onClick={() => setModalActive(false)}>Не сохранять</Button>
-            <Button onClick={postItem}>Сохранить</Button>
-          </ModalButtons>
-        </Modal>
+          postItem={postItem}
+          inputForm={inputForm}
+          setInputForm={setInputForm}
+          textBtn="Сохранить"
+        />
       </Main>
     </>
   );
