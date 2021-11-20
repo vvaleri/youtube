@@ -22,9 +22,9 @@ export const Registration = () => {
       password={inputValue.password}
       setInputValue={setInputValue}
       textButton="Зарегистрироваться"
-      buttonAction={initRegistation}
+      formAction={initRegistation}
     >
-      <div>Уже зарегистрированы?</div>
+      <p>Уже зарегистрированы?</p>
       <NavLink exact to="/login">войти</NavLink>
     </LoginForm>
   );

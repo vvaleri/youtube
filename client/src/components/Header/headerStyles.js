@@ -10,12 +10,16 @@ const HeaderContainer = styled.header`
 const Inner = styled.div`
   display: flex;
   max-width: 1040px;
-  padding: 10px;
+  padding: 10px 20px;
   margin: 0 auto;
 `;
 
 const Logo = styled.div`
-  margin: 0 60px 0 0;
+  margin-right: 60px;
+
+  @media (max-width: 767px) {
+    margin-right: 30px;
+  }
 `;
 
 const Nav = styled.nav`
@@ -30,22 +34,25 @@ const Menu = styled.ul`
 `;
 
 const Item = styled.li`
-  margin: 0 40px 0 0;
+  margin-right: 40px;
 
   :last-child {
     margin: 0;
   }
 
-  a {
-    padding: 0 0 25px 0;
+  a, button {
+    padding-bottom: 25px;
     font-size: 18px;
     line-height: 28px;
     color: #272727;
     opacity: 0.3;
 
-    :hover {
+    @media (hover: hover), screen and (min-width: 0\0) {
+    :hover,
+    :focus {
       color: #0057fa;
     }
+   }
 
     &.active {
       color: #1390E5;
@@ -57,10 +64,24 @@ const Item = styled.li`
       color: #1390E5;
       opacity: 1;
 
-      :hover {
-      color: #0057fa;
+      @media (hover: hover), screen and (min-width: 0\0) {
+      :hover,
+      :focus {
+        color: #0057fa;
+      }
+     }
     }
+
+    @media (max-width: 767px) {
+      font-size: 16px;
     }
+  }
+
+  button {
+    padding-bottom: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
 
 `;

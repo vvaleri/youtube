@@ -24,7 +24,7 @@ export const Auth = () => {
       password={inputValue.password}
       setInputValue={setInputValue}
       textButton="Войти"
-      buttonAction={initAuth}
+      formAction={initAuth}
     />
   );
 };

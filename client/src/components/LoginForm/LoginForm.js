@@ -8,28 +8,30 @@ export const LoginForm = ({ inputValue,
   password,
   setInputValue,
   textButton,
-  buttonAction,
+  formAction,
   children }) => (
     <Main>
       <Container>
         <Logo><img src={Icon} alt="логотип" /></Logo>
         <Title>Вход</Title>
-        <Form>
+        <Form onSubmit={formAction}>
           <Inputs>
             <Label>E-mail</Label>
             <Input
               value={email}
               onChange={e => setInputValue({ ...inputValue, email: e.target.value })}
               type="text"
+              required
             />
             <Label>Пароль</Label>
             <Input
               value={password}
               onChange={e => setInputValue({ ...inputValue, password: e.target.value })}
               type="password"
+              required
             />
           </Inputs>
-          <Button register onClick={buttonAction}>{textButton}</Button>
+          <Button register type="submit">{textButton}</Button>
         </Form>
         {children}
       </Container>

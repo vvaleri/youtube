@@ -13,6 +13,10 @@ const MainInput = styled.input`
     font-size: 18px;
     color: #272727;
     opacity: 0.3;
+
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
   }
 
   :focus {

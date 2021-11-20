@@ -13,6 +13,10 @@ const MainButton = styled.button`
   cursor: pointer;
   transition: background-color 0.3s;
 
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+
   @media (hover: hover), screen and (min-width: 0\0) {
     :hover,
     :focus {

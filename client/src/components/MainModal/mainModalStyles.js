@@ -15,6 +15,10 @@ const Label = styled.label`
   font-size: 18px;
   line-height: 24px;
 
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+
   span {
     &:before {
       content: '*';
@@ -27,6 +31,21 @@ const Label = styled.label`
 const ModalButtons = styled.div`
   display: flex;
   justify-content: space-between;
+
+  button {
+    @media (max-width: 767px) {
+      width: 100%;
+      flex: 1 1 auto;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  button:first-child {
+    @media (max-width: 767px) {
+      margin-right: 10px;
+    }
+  }
 `;
 
 export { ModalTitle, Label, ModalButtons };

@@ -41,6 +41,10 @@ const Wrap = styled.div`
   min-height: 100%;
   padding: 60px 40px;
 
+  @media (max-width: 767px) {
+    padding: 0;
+  }
+
 `;
 
 const Overlay = styled.div`
@@ -59,6 +63,15 @@ const Content = styled.div`
   background-color: #fff;
   padding: 40px 50px;
   border-radius: 10px;
+
+  @media (max-width: 767px) {
+    justify-content: center;
+    padding: 30px 20px;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
 
 `;
 
