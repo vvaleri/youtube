@@ -35,6 +35,11 @@ export const FavouriteItem = ({ item }) => {
     blockScroll();
   };
 
+  const closeModal = () => {
+    setModalActive(false);
+    allowScroll();
+  };
+
   const openDeleteModal = () => {
     setDeleteModal(true);
     blockScroll();
@@ -53,6 +58,7 @@ export const FavouriteItem = ({ item }) => {
         modalActive={modalActive}
         setModalActive={setModalActive}
         allowScroll={allowScroll}
+        closeModal={closeModal}
         postItem={postItem}
         inputForm={inputForm}
         setInputForm={setInputForm}

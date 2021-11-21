@@ -4,14 +4,13 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 40px 0 0 0;
+  margin-top: 40px;
 `;
 
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-
 `;
 
 const Text = styled.div`
@@ -22,16 +21,20 @@ const Text = styled.div`
 `;
 
 const Title = styled.div`
-  margin: 0 15px 0 0;
+  max-width: 800px;
   
 `;
 
 const Buttons = styled.div`
-  
+  flex: 0 0 50px;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const Btn = styled.button`
-  margin: 0 0 0 15px;
+  margin-bottom: 15px;
   border: none;
   background: none;
   cursor: pointer;
@@ -42,9 +45,12 @@ const Btn = styled.button`
     opacity: 1;
   }
 
-  &:hover {
-    opacity: 0.9;
-  }
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      opacity: 0.9;
+    }
+   }
 
   &.list {
     opacity: 1;
@@ -53,8 +59,11 @@ const Btn = styled.button`
       opacity: 0.5;
     }
 
-    &:hover {
-    opacity: 0.9;
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        opacity: 0.9;
+      }
     }
   }
 `;
@@ -64,6 +73,11 @@ const Content = styled.ul`
   flex-wrap: wrap;
   width: calc(100% + 20px);
   margin-bottom: -20px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    margin-bottom: 0;
+  }
 `;
 
 export { Container, Header, Title, Text, Buttons, Btn, Content };

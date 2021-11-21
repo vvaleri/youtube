@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { Modal } from '../UI/Modal/Modal';
-import { Text, Buttons, CancelBtn, SaveBtn } from './deleteModalStyles';
+import { Button } from '../UI/Button/Button';
+import { Text, Buttons } from './deleteModalStyles';
 import { deleteItems } from '../../actions/favouritesAction';
 
 export const DeleteModal = ({ id, deleteModal, setDeleteModal, allowScroll }) => {
@@ -24,8 +25,8 @@ export const DeleteModal = ({ id, deleteModal, setDeleteModal, allowScroll }) =>
     >
       <Text>Вы действительно хотите удалить этот запрос?</Text>
       <Buttons>
-        <CancelBtn onClick={closeModal}>Отмена</CancelBtn>
-        <SaveBtn onClick={deleteItemsById}>Удалить</SaveBtn>
+        <Button white onClick={closeModal}>Отмена</Button>
+        <Button onClick={deleteItemsById}>Удалить</Button>
       </Buttons>
     </Modal>
   );

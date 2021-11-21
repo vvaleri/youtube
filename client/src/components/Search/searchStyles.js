@@ -5,7 +5,12 @@ const Main = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center; 
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 350px;
+
+  &.active {
+    justify-content: flex-start;
+  }
 `;
 
 const SearchContainer = styled.div`
@@ -14,6 +19,10 @@ const SearchContainer = styled.div`
   align-items: center;
   padding: 0 20px 20px;
   max-width: 1080px;
+
+  @media (max-width: 767px) {
+      width: 100%;
+  }
 
   &.active {
     align-items: flex-start;
@@ -27,6 +36,11 @@ const SearchTitle = styled.h1`
   font-size: 36px;
   line-height: 52px;
 
+  @media (max-width: 767px) {
+    margin-bottom: 20px;
+    font-size: 26px;
+  }
+
   &.active {
     margin-bottom: 10px;
     font-size: 28px;
@@ -37,6 +51,7 @@ const SearchTitle = styled.h1`
 const SearchInner = styled.div`
   display: flex;
   position: relative;
+  width: 100%;
 `;
 
 const LikeBtn = styled.button`
@@ -49,6 +64,11 @@ const LikeBtn = styled.button`
   cursor: pointer;
   transition: transform 0.3s;
 
+  @media (max-width: 767px) {
+    right: 130px;
+    top: 12px;
+  }
+
   @media (hover: hover), screen and (min-width: 0\0) {
     &:hover,
     &:focus {
@@ -57,40 +77,8 @@ const LikeBtn = styled.button`
   }
 `;
 
-const ModalTitle = styled.h2`
-  margin-bottom: 35px;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 28px;
-  text-align: center;
-`;
-
-const Label = styled.label`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 25px;
-  font-size: 18px;
-  line-height: 24px;
-
-  span {
-    &:before {
-      content: '*';
-      margin-right: 3px;
-      color: #FF0000; 
-    }
-  }
-`;
-
-const ModalButtons = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
 export { Main,
   SearchContainer,
   SearchTitle,
   SearchInner,
-  LikeBtn,
-  ModalTitle,
-  Label,
-  ModalButtons };
+  LikeBtn };

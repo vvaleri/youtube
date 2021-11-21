@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Header } from '..';
@@ -30,6 +29,11 @@ export const Search = () => {
     blockScroll();
   };
 
+  const closeModal = () => {
+    setModalActive(false);
+    allowScroll();
+  };
+
   const postItem = () => {
     const valueText = {
       title: inputForm.title,
@@ -38,14 +42,13 @@ export const Search = () => {
     };
 
     dispatch(addItem(valueText));
-    setModalActive(false);
-    allowScroll();
+    closeModal();
   };
 
   return (
     <>
       <Header />
-      <Main>
+      <Main className={isActive ? 'active' : ''}>
         <SearchContainer className={isActive ? 'active' : ''}>
           <SearchTitle className={isActive ? 'active' : ''}>Поиск видео</SearchTitle>
           <SearchInner>
@@ -57,12 +60,9 @@ export const Search = () => {
               value={inputValue}
               onChange={e => setInputValue(e.target.value)}
             />
-            {/* {
+            {
               isActive && <LikeBtn onClick={openModal}><img src={LikeIcon} alt="кнопка сохранить поиск" /></LikeBtn>
-            } */}
-
-            <LikeBtn onClick={openModal}><img src={LikeIcon} alt="кнопка сохранить поиск" /></LikeBtn>
-
+            }
             <Button main onClick={() => dispatch(searchVideo(inputValue, apiKey))}>Найти</Button>
           </SearchInner>
           {
@@ -73,6 +73,7 @@ export const Search = () => {
           modalActive={modalActive}
           setModalActive={setModalActive}
           allowScroll={allowScroll}
+          closeModal={closeModal}
           postItem={postItem}
           inputForm={inputForm}
           setInputForm={setInputForm}

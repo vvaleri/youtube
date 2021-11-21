@@ -18,7 +18,7 @@ const Logo = styled.div`
   margin-right: 60px;
 
   @media (max-width: 767px) {
-    margin-right: 30px;
+    margin-right: 5px;
   }
 `;
 
@@ -35,6 +35,10 @@ const Menu = styled.ul`
 
 const Item = styled.li`
   margin-right: 40px;
+
+  @media (max-width: 767px) {
+    margin-right: 20px;
+  }
 
   :last-child {
     margin: 0;

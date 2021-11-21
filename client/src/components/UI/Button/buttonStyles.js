@@ -39,6 +39,12 @@ const MainButton = styled.button`
   ${props => props.main && css`
        flex: 0 0 150px;
        border-radius: 0 5px 5px 0;
+
+       @media (max-width: 767px) {
+         padding-top: 12px;
+         padding-bottom: 12px;
+         flex: 1 1 auto;
+       }
   `}
 
   ${props => props.register && css`

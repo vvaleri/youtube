@@ -11,67 +11,74 @@ const Item = styled.li`
   padding: 10px 20px;
   font-size: 18px;
   font-weight: 500;
-  border-bottom: 1px solid #F1F1F1;
+  border-bottom: 1px solid #e2e3e1;
+  transition: background-color 0.3s;
   cursor: pointer;
 
-  &:hover {
-    background-color: #f0f8ff;
+  @media (max-width: 767px) {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+  }
 
-    button {
+  @media (hover: hover), screen and (min-width: 0\0) {
+    :hover,
+    :focus {
+      background-color: #f0f8ff;
+
+      button {
       opacity: 1;
+     }
     }
   }
  
 `;
+
 const Buttons = styled.div`
-  
+  display: flex;
+  margin-left: 10px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const Btn = styled.button`
-  padding: 10px 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border: none;
   background-color: transparent;
   color: #0057fa;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: color 0.3s, opacity 0.3s;
   opacity: 0;
 
+  @media (max-width: 1024px) {
+    opacity: 1;
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    text-align: start;
+  }
+
   &:first-child {
-    margin-right: 15px;
+    margin-right: 20px;
+
+    @media (max-width: 767px) {
+      margin-right: 0;
+    }
   }
 
-  &:hover {
-    color: #1390E5;
-  }
-`;
-
-const ModalTitle = styled.h2`
-  margin-bottom: 35px;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 28px;
-  text-align: center;
-`;
-
-const Label = styled.label`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 25px;
-  font-size: 18px;
-  line-height: 24px;
-
-  span {
-    &:before {
-      content: '*';
-      margin-right: 3px;
-      color: #FF0000; 
+  @media (hover: hover), screen and (min-width: 0\0) {
+    :hover,
+    :focus {
+      color: #1390E5;
     }
   }
 `;
 
-const ModalButtons = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-export { FavouriteContainer, Item, Buttons, Btn, ModalTitle, Label, ModalButtons };
+export { FavouriteContainer, Item, Buttons, Btn };

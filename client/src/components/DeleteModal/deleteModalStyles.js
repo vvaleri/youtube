@@ -9,31 +9,21 @@ const Text = styled.p`
 const Buttons = styled.div`
   display: flex;
   justify-content: space-between;
-`;
 
-const CancelBtn = styled.button`
-  padding: 10px 32px;
-  font-size: 16px;
-  color: #1390E5;
-  border: 1px solid #1390E5;
-  border-radius: 5px;
-  background: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  button {
+    padding: 10px 32px;
+    font-size: 16px;
 
-  :hover {
-    background-color: #e3f3ff;
+    @media (max-width: 767px) {
+      flex: 1 1 auto;
+    }
+  }
+
+  button:first-child {
+    @media (max-width: 767px) {
+      margin-right: 10px;
+    }
   }
 `;
 
-const SaveBtn = styled(CancelBtn)`
-  padding: 10px 30px;
-  color: #fff;
-  background-color: #1390E5;
-
-  :hover {
-    background-color: #0057fa;
-  }
-`;
-
-export { Text, Buttons, CancelBtn, SaveBtn };
+export { Text, Buttons };

@@ -30,8 +30,23 @@ const MainInput = styled.input`
       height: 52px;
       border-radius: 5px 0 0 5px;
 
+      @media (max-width: 767px) {
+        width: 100%;
+        height: 45px;
+        padding-left: 10px;
+
+        ::placeholder {
+          font-size: 12px;
+        }
+      }
+
        &.active {
         width: 910px;
+        padding-right: 50px;
+
+        @media (max-width: 767px) {
+          width: 100%;
+        }
       }
   `}
 `;

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Header, FavouriteItem } from '..';
-import { Main, FavouriteTitle } from './favouritesStyles';
+import { Main, FavouriteTitle, Text } from './favouritesStyles';
 import { getItems } from '../../actions/favouritesAction';
 
 export const Favourites = () => {
@@ -21,7 +21,9 @@ export const Favourites = () => {
       <Main>
         <FavouriteTitle>Избранное</FavouriteTitle>
         {
-          favourites.map(item => <FavouriteItem key={item._id || item.id} item={item} />)
+          favourites.length > 0
+            ? favourites.map(item => <FavouriteItem key={item._id || item.id} item={item} />)
+            : <Text>У вас пока нет сохранённых запросов</Text>
         }
       </Main>
     </>

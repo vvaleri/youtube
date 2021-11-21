@@ -9,6 +9,7 @@ export const MainModal = ({ modalActive,
   postItem,
   inputForm,
   setInputForm,
+  closeModal,
   textBtn }) => (
 
     <Modal
@@ -33,7 +34,7 @@ export const MainModal = ({ modalActive,
         />
       </Label>
       <ModalButtons>
-        <Button white onClick={() => setModalActive(false)}>Отмена</Button>
+        <Button white onClick={closeModal}>Отмена</Button>
         <Button onClick={postItem}>{textBtn}</Button>
       </ModalButtons>
     </Modal>
