@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { push } from 'connected-react-router';
 import { HeaderContainer, Inner, Logo, Nav, Menu, Item } from './headerStyles';
 import Icon from '../../img/logo.svg';
 import { logoutUser } from '../../store/reducers/userReducer';
@@ -10,6 +11,11 @@ export const Header = () => {
     { to: '/favourites', name: 'Избранное' }
   ];
   const dispatch = useDispatch();
+
+  const logOut = () => {
+    dispatch(logoutUser());
+    dispatch(push('/login'));
+  };
 
   return (
     <HeaderContainer>
@@ -27,7 +33,7 @@ export const Header = () => {
           </Menu>
           <Menu>
             <Item key="Выйти">
-              <button type="button" className="auth" onClick={() => dispatch(logoutUser())}>Выйти</button>
+              <button type="button" className="auth" onClick={logOut}>Выйти</button>
             </Item>
           </Menu>
         </Nav>

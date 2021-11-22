@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { push } from 'connected-react-router';
 import { setUser } from '../store/reducers/userReducer';
 
 export const postUserData = user => {
@@ -11,6 +12,7 @@ export const authUserData = user => dispatch => {
     .then(res => {
       dispatch(setUser(res.data.user));
       localStorage.setItem('token', res.data.token);
+      dispatch(push('/search'));
     });
 };
 

@@ -1,10 +1,6 @@
 /* eslint-disable max-len */
 const defaultState = {
-  course: {
-    number: '',
-    fromCourse: '',
-    toCourse: ''
-  }
+  strSearch: ''
 };
 
 const GET_INPUT_VALUE = 'GET_INPUT_VALUE';
