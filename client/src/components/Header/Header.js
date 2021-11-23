@@ -4,6 +4,7 @@ import { push } from 'connected-react-router';
 import { HeaderContainer, Inner, Logo, Nav, Menu, Item } from './headerStyles';
 import Icon from '../../img/logo.svg';
 import { logoutUser } from '../../store/reducers/userReducer';
+import { resetVideoState } from '../../store/reducers/videoReducer';
 
 export const Header = () => {
   const menuItems = [
@@ -14,6 +15,7 @@ export const Header = () => {
 
   const logOut = () => {
     dispatch(logoutUser());
+    dispatch(resetVideoState());
     dispatch(push('/login'));
   };
 

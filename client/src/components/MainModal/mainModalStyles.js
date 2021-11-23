@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 
 const ModalTitle = styled.h2`
   margin-bottom: 35px;
@@ -18,6 +18,10 @@ const Label = styled.label`
   @media (max-width: 767px) {
     font-size: 16px;
   }
+
+  ${props => props.last && css`
+        margin-bottom: 40px;
+  `}
 
   span {
     &:before {

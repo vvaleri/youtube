@@ -1,6 +1,5 @@
-/* eslint-disable max-len */
 const defaultState = {
-  strSearch: ''
+  inputSearch: ''
 };
 
 const GET_INPUT_VALUE = 'GET_INPUT_VALUE';
@@ -8,7 +7,7 @@ const GET_INPUT_VALUE = 'GET_INPUT_VALUE';
 export const searchInputReducer = (state = defaultState, action) => {
   switch (action.type) {
     case GET_INPUT_VALUE:
-      return { ...state, course: { ...state.course, ...action.payload } };
+      return { ...state, inputSearch: action.payload };
 
     default:
       return state;

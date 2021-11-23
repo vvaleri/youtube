@@ -2,6 +2,7 @@ import { Main, Container, Logo, Title, Inputs, Form, Label } from './loginFormSt
 import { Button } from '../UI/Button/Button';
 import { Input } from '../UI/Input/Input';
 import Icon from '../../img/logo.svg';
+import { ErrorTooltip } from '../UI/ErrorTooltip/ErrorTooltip';
 
 export const LoginForm = ({ inputValue,
   email,
@@ -9,6 +10,8 @@ export const LoginForm = ({ inputValue,
   setInputValue,
   textButton,
   formAction,
+  textError,
+  isError,
   children }) => (
     <Main>
       <Container>
@@ -31,6 +34,7 @@ export const LoginForm = ({ inputValue,
               required
             />
           </Inputs>
+          {isError && <ErrorTooltip login>{textError}</ErrorTooltip>}
           <Button register type="submit">{textButton}</Button>
         </Form>
         {children}

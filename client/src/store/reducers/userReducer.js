@@ -1,10 +1,13 @@
 const defaultState = {
   user: {},
-  isAuth: false
+  isAuth: false,
+  errRegistration: false,
+  errorText: ''
 };
 
 const SET_USER = 'SET_USER';
 const LOGOUT = 'LOGOUT';
+const SHOW_ERROR_REGISTRATION = 'SHOW_ERROR_REGISTRATION';
 
 export const userReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -12,7 +15,9 @@ export const userReducer = (state = defaultState, action) => {
       return {
         ...state,
         user: action.payload,
-        isAuth: true
+        isAuth: true,
+        errRegistration: false,
+        errorText: ''
       };
     case LOGOUT:
       localStorage.removeItem('token');
@@ -21,6 +26,12 @@ export const userReducer = (state = defaultState, action) => {
         user: {},
         isAuth: false
       };
+    case SHOW_ERROR_REGISTRATION:
+      return {
+        ...state,
+        errRegistration: true,
+        errorText: action.payload
+      };
     default:
       return state;
   }
@@ -28,3 +39,5 @@ export const userReducer = (state = defaultState, action) => {
 
 export const setUser = user => ({ type: SET_USER, payload: user });
 export const logoutUser = () => ({ type: LOGOUT });
+export const initErrRigistration = payload => ({ type: SHOW_ERROR_REGISTRATION,
+  payload });

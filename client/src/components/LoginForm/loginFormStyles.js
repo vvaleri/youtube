@@ -90,6 +90,7 @@ const Inputs = styled.div`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  position: relative;
 
   button {
     @media (max-width: 767px) {

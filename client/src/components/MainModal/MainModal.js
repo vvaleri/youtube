@@ -17,26 +17,31 @@ export const MainModal = ({ modalActive,
       setActive={setModalActive}
       allowScroll={allowScroll}
     >
-      <ModalTitle>Сохранить запрос</ModalTitle>
-      <Label>
-        <span>Запрос</span>
-        <Input
-          value={inputForm.title}
-          onChange={e => setInputForm({ ...inputForm, title: e.target.value })}
-        />
-      </Label>
-      <Label>
-        <span>Название</span>
-        <Input
-          value={inputForm.name}
-          onChange={e => setInputForm({ ...inputForm, name: e.target.value })}
-          placeholder="Укажите название"
-        />
-      </Label>
-      <ModalButtons>
-        <Button white onClick={closeModal}>Отмена</Button>
-        <Button onClick={postItem}>{textBtn}</Button>
-      </ModalButtons>
+      <form onSubmit={postItem}>
+        <ModalTitle>Сохранить запрос</ModalTitle>
+        <Label>
+          <span>Запрос</span>
+          <Input
+            value={inputForm.title}
+            onChange={e => setInputForm({ ...inputForm, title: e.target.value })}
+            placeholder="Введите запрос"
+            required
+          />
+        </Label>
+        <Label last>
+          <span>Название</span>
+          <Input
+            value={inputForm.name}
+            onChange={e => setInputForm({ ...inputForm, name: e.target.value })}
+            placeholder="Укажите название"
+            required
+          />
+        </Label>
+        <ModalButtons>
+          <Button white type="button" onClick={closeModal}>Отмена</Button>
+          <Button type="submit">{textBtn}</Button>
+        </ModalButtons>
+      </form>
     </Modal>
 
 );

@@ -1,11 +1,6 @@
 import axios from 'axios';
 import { push } from 'connected-react-router';
-import { setUser } from '../store/reducers/userReducer';
-
-export const postUserData = user => {
-  axios.post('http://localhost:5000/users/registration', user)
-    .then(res => console.log(res.data));
-};
+import { setUser, initErrRigistration } from '../store/reducers/userReducer';
 
 export const authUserData = user => dispatch => {
   axios.post('http://localhost:5000/users/login', user)
@@ -13,6 +8,25 @@ export const authUserData = user => dispatch => {
       dispatch(setUser(res.data.user));
       localStorage.setItem('token', res.data.token);
       dispatch(push('/search'));
+    })
+    .catch(error => {
+      if (!error.response) {
+        dispatch(initErrRigistration('Server error. Please, try again'));
+      } else if (error.response.status !== 200) {
+        dispatch(initErrRigistration(error.response.data.message));
+      }
+    });
+};
+
+export const postUserData = user => dispatch => {
+  axios.post('http://localhost:5000/users/registration', user)
+    .then(res => dispatch(authUserData(user)))
+    .catch(error => {
+      if (!error.response) {
+        dispatch(initErrRigistration('Server error. Please, try again'));
+      } else if (error.response.status !== 200) {
+        dispatch(initErrRigistration(error.response.data.message));
+      }
     });
 };
 
@@ -22,7 +36,6 @@ export const authUser = () => dispatch => {
     .then(res => {
       dispatch(setUser(res.data.user));
       localStorage.setItem('token', res.data.token);
-      console.log(res.data);
     })
     .catch(() => localStorage.removeItem('token'));
 };

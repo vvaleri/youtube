@@ -48,7 +48,7 @@ const SearchTitle = styled.h1`
   }
 `;
 
-const SearchInner = styled.div`
+const SearchInner = styled.form`
   display: flex;
   position: relative;
   width: 100%;

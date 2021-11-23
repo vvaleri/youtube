@@ -5,9 +5,10 @@ import { VideoItem } from '../VideoItem/VideoItem';
 import ListIcon from '../../img/list.svg';
 import GridIcon from '../../img/grid.svg';
 
-export const Results = ({ inputValue }) => {
+export const Results = () => {
   const [classItem, setClassItem] = useState('');
   const { video } = useSelector(state => state.videoReducer);
+  const { inputSearch } = useSelector(state => state.searchInputReducer);
 
   return (
     <Container>
@@ -15,7 +16,7 @@ export const Results = ({ inputValue }) => {
         <Text>
           <Title>
             Видео по запросу &quot;
-            { inputValue }
+            { inputSearch }
             &quot;
           </Title>
         </Text>

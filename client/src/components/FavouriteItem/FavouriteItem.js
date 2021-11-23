@@ -17,19 +17,6 @@ export const FavouriteItem = ({ item }) => {
   const dispatch = useDispatch();
   const { user } = useSelector(state => state.userReducer);
 
-  const postItem = () => {
-    const valueText = {
-      id: item._id,
-      title: inputForm.title,
-      name: inputForm.name,
-      userEmail: user.email
-    };
-
-    dispatch(updateItem(valueText));
-    setDeleteModal(false);
-    allowScroll();
-  };
-
   const openModal = () => {
     setModalActive(true);
     blockScroll();
@@ -43,6 +30,19 @@ export const FavouriteItem = ({ item }) => {
   const openDeleteModal = () => {
     setDeleteModal(true);
     blockScroll();
+  };
+
+  const postItem = e => {
+    e.preventDefault();
+    const valueText = {
+      id: item._id,
+      title: inputForm.title,
+      name: inputForm.name,
+      userEmail: user.email
+    };
+
+    dispatch(updateItem(valueText));
+    closeModal();
   };
 
   return (

@@ -1,11 +1,14 @@
 const defaultState = {
-  favourites: []
+  favourites: [],
+  errorItems: false,
+  errortext: ''
 };
 
 const GET_ITEMS = 'GET_ITEMS';
 const DELETE_ITEMS = 'DELETE_ITEMS';
 const ADD_ITEM = 'ADD_ITEM';
 const UPDATE_ITEM = 'UPDATE_ITEM';
+const SHOW_ERROR_ITEMS = 'SHOW_ERROR_ITEMS';
 
 export const favouritesReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -24,6 +27,11 @@ export const favouritesReducer = (state = defaultState, action) => {
           ? action.payload
           : item) };
 
+    case SHOW_ERROR_ITEMS:
+      return { ...state,
+        errorItems: true,
+        errortext: action.payload };
+
     default:
       return state;
   }
@@ -33,3 +41,4 @@ export const showAllItems = payload => ({ type: GET_ITEMS, payload });
 export const deleteFavouriteItems = payload => ({ type: DELETE_ITEMS, payload });
 export const addFavouriteItem = payload => ({ type: ADD_ITEM, payload });
 export const updateFavouriteItem = payload => ({ type: UPDATE_ITEM, payload });
+export const showErrorRequest = payload => ({ type: SHOW_ERROR_ITEMS, payload });

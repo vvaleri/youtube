@@ -18,9 +18,13 @@ const FavouriteTitle = styled.h1`
   }
 `;
 
+const Head = styled.div`
+  position: relative;
+`;
+
 const Text = styled.p`
   font-size: 18px;
   color: #B5B8B1;
 `;
 
-export { Main, FavouriteTitle, Text };
+export { Main, FavouriteTitle, Text, Head };

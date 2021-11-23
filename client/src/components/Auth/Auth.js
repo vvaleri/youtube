@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { authUserData } from '../../actions/userAction';
 import { LoginForm } from '../LoginForm/LoginForm';
 
 export const Auth = () => {
   const [inputValue, setInputValue] = useState({ email: '', password: '' });
+  const { errRegistration, errorText } = useSelector(state => state.userReducer);
 
   const dispatch = useDispatch();
 
@@ -25,6 +26,8 @@ export const Auth = () => {
       setInputValue={setInputValue}
       textButton="Войти"
       formAction={initAuth}
+      isError={errRegistration}
+      textError={errorText}
     />
   );
 };

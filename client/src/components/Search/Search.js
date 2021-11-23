@@ -11,6 +11,8 @@ import LikeIcon from '../../img/like.svg';
 import { searchVideo } from '../../actions/videoAction';
 import { addItem } from '../../actions/favouritesAction';
 import { MainModal } from '../MainModal/MainModal';
+import { ErrorTooltip } from '../UI/ErrorTooltip/ErrorTooltip';
+import { getInputValue } from '../../store/reducers/searchInputReducer';
 
 export const Search = () => {
   const [inputValue, setInputValue] = useState('');
@@ -21,12 +23,14 @@ export const Search = () => {
   const [inputForm, setInputForm] = useState({ title: '', name: '' });
 
   const dispatch = useDispatch();
-  const { results, isActive } = useSelector(state => state.videoReducer);
+  const { results, isActive, errorSearch } = useSelector(state => state.videoReducer);
   const { user } = useSelector(state => state.userReducer);
 
   const openModal = () => {
-    setModalActive(true);
-    blockScroll();
+    if (inputValue !== '') {
+      setModalActive(true);
+      blockScroll();
+    }
   };
 
   const closeModal = () => {
@@ -34,7 +38,14 @@ export const Search = () => {
     allowScroll();
   };
 
-  const postItem = () => {
+  const submitSearchForm = e => {
+    e.preventDefault();
+    dispatch(searchVideo(inputValue, apiKey));
+    dispatch(getInputValue(inputValue));
+  };
+
+  const postItem = e => {
+    e.preventDefault();
     const valueText = {
       title: inputForm.title,
       name: inputForm.name,
@@ -51,7 +62,7 @@ export const Search = () => {
       <Main className={isActive ? 'active' : ''}>
         <SearchContainer className={isActive ? 'active' : ''}>
           <SearchTitle className={isActive ? 'active' : ''}>Поиск видео</SearchTitle>
-          <SearchInner>
+          <SearchInner onSubmit={submitSearchForm}>
             <Input
               search
               className={isActive ? 'active' : ''}
@@ -59,11 +70,13 @@ export const Search = () => {
               placeholder="Что хотите посмотреть?"
               value={inputValue}
               onChange={e => setInputValue(e.target.value)}
+              required
             />
+            { errorSearch && <ErrorTooltip search>Пожалуйста, повторите запрос</ErrorTooltip> }
             {
-              isActive && <LikeBtn onClick={openModal}><img src={LikeIcon} alt="кнопка сохранить поиск" /></LikeBtn>
+              isActive && <LikeBtn type="button" onClick={openModal}><img src={LikeIcon} alt="кнопка сохранить поиск" /></LikeBtn>
             }
-            <Button main onClick={() => dispatch(searchVideo(inputValue, apiKey))}>Найти</Button>
+            <Button main>Найти</Button>
           </SearchInner>
           {
           results && <Results inputValue={inputValue} />
