@@ -51,6 +51,7 @@ const SearchTitle = styled.h1`
 const SearchInner = styled.form`
   display: flex;
   position: relative;
+  margin-bottom: 40px;
   width: 100%;
 `;
 

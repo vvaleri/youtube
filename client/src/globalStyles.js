@@ -35,4 +35,18 @@ export const GlobalStyles = createGlobalStyle`
   li {
     list-style: none;
   }
+
+  input {
+  border-radius: 0;
+  appearance: none;
+  line-height: normal;
+
+  &::placeholder {
+    opacity: 1;
+  }
+
+  &:invalid {
+    box-shadow: none;
+  }
+}
 `;

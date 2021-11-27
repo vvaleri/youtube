@@ -44,6 +44,7 @@ const MainButton = styled.button`
          padding-top: 12px;
          padding-bottom: 12px;
          flex: 1 1 auto;
+         min-height: 45px ;
        }
   `}
 
@@ -52,6 +53,10 @@ const MainButton = styled.button`
        padding-left: 40px;
        padding-right: 40px;
        margin: 0 auto;
+
+       @media (max-width: 767px) {
+        width: 100%;
+      }
   `}
 `;
 

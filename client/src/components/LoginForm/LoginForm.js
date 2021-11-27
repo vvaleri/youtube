@@ -1,7 +1,8 @@
-import { Main, Container, Logo, Title, Inputs, Form, Label } from './loginFormStyles';
+import { Main, Container, Logo, Title, Inputs, Form, Label, TipBtn, Tip } from './loginFormStyles';
 import { Button } from '../UI/Button/Button';
 import { Input } from '../UI/Input/Input';
 import Icon from '../../img/logo.svg';
+import IconQuestion from '../../img/icon-question.svg';
 import { ErrorTooltip } from '../UI/ErrorTooltip/ErrorTooltip';
 
 export const LoginForm = ({ inputValue,
@@ -12,6 +13,9 @@ export const LoginForm = ({ inputValue,
   formAction,
   textError,
   isError,
+  tipPassword,
+  showTipPassword,
+  isTip,
   children }) => (
     <Main>
       <Container>
@@ -26,7 +30,18 @@ export const LoginForm = ({ inputValue,
               type="text"
               required
             />
-            <Label>Пароль</Label>
+            <Label>
+              Пароль
+              {isTip
+              && (
+              <>
+                {tipPassword && <Tip>Пароль должен содержать от 3 до 12 символов</Tip>}
+                <TipBtn type="button" onClick={showTipPassword}>
+                  <img src={IconQuestion} alt="tip for password" />
+                </TipBtn>
+              </>
+              )}
+            </Label>
             <Input
               value={password}
               onChange={e => setInputValue({ ...inputValue, password: e.target.value })}

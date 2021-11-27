@@ -33,6 +33,10 @@ const Container = styled.div`
     margin-top: 10px;
     margin-bottom: 5px;
     font-size: 18px;
+
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
   }
 
   a {
@@ -91,16 +95,50 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   position: relative;
-
-  button {
-    @media (max-width: 767px) {
-      width: 100%;
-    }
-  }
 `;
 
 const Label = styled.label`
+  position: relative;
+  display: flex;
+  margin-bottom: 5px;
   color: rgba(23, 23, 25, 0.3);
 `;
 
-export { Main, Container, Logo, Title, Inputs, Label, Form };
+const Tip = styled.div`
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  padding: 5px 10px;
+  background-color: #DBE2EF;
+  color: #83887C;
+  border-radius: 15px;
+  border: 1px solid #caccc8;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+
+  :after {
+    content: '';
+    position: absolute;
+    bottom: -18px;
+    left: 60px;
+    border: 10px solid transparent;
+    border-top: 10px solid #DBE2EF;
+  }
+`;
+
+const TipBtn = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+  }
+
+`;
+
+export { Main, Container, Logo, Title, Inputs, Label, Form, TipBtn, Tip };
