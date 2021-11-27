@@ -3,7 +3,7 @@ import { push } from 'connected-react-router';
 import { setUser, initErrRigistration } from '../store/reducers/userReducer';
 
 export const authUserData = user => dispatch => {
-  axios.post('http://localhost:5000/users/login', user)
+  axios.post('https://aqueous-ravine-02237.herokuapp.com/users/login', user)
     .then(res => {
       dispatch(setUser(res.data.user));
       localStorage.setItem('token', res.data.token);
@@ -19,7 +19,7 @@ export const authUserData = user => dispatch => {
 };
 
 export const postUserData = user => dispatch => {
-  axios.post('http://localhost:5000/users/registration', user)
+  axios.post('https://aqueous-ravine-02237.herokuapp.com/users/registration', user)
     .then(res => dispatch(authUserData(user)))
     .catch(error => {
       if (!error.response) {
@@ -31,7 +31,7 @@ export const postUserData = user => dispatch => {
 };
 
 export const authUser = () => dispatch => {
-  axios.get('http://localhost:5000/users/auth',
+  axios.get('https://aqueous-ravine-02237.herokuapp.com/users/auth',
     { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } })
     .then(res => {
       dispatch(setUser(res.data.user));
