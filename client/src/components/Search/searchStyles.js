@@ -17,7 +17,7 @@ const SearchContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 20px 20px;
+  padding: 0 20px 40px;
   max-width: 1080px;
 
   @media (max-width: 767px) {
@@ -53,6 +53,7 @@ const SearchInner = styled.form`
   position: relative;
   margin-bottom: 40px;
   width: 100%;
+  min-height: 45px;
 `;
 
 const LikeBtn = styled.button`

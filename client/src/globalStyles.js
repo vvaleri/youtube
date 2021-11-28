@@ -43,6 +43,7 @@ export const GlobalStyles = createGlobalStyle`
 
   &::placeholder {
     opacity: 1;
+    line-height: normal;
   }
 
   &:invalid {
